@@ -1,0 +1,26 @@
+{
+  "name": "sportsdesk-au",
+  "version": "1.0.0",
+  "description": "Australian sports news aggregator",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "fetch-feeds": "node scripts/fetch-feeds.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rss-parser": "^3.13.0",
+    "node-cache": "^5.1.2",
+    "date-fns": "^3.0.0",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
