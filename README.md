@@ -262,3 +262,4 @@ Use this when approaching publishers for formal RSS partnership:
 | Domain | Any registrar (.com.au ~$20/yr) | ~$20/yr |
 
 **Total monthly cost to launch: ~$0–$20**
+
