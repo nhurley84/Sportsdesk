@@ -261,5 +261,5 @@ Use this when approaching publishers for formal RSS partnership:
 | Ads | Google Ad Manager | Free |
 | Domain | Any registrar (.com.au ~$20/yr) | ~$20/yr |
 
-**Total monthly cost to launch: ~$0–$20**
+**Total monthly cost to launch: ~$0–$20** 
 
