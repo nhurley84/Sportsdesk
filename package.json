@@ -1,6 +1,6 @@
 {
   "name": "sportsdesk-au",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Australian sports news aggregator",
   "scripts": {
     "dev": "next dev",
