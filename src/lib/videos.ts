@@ -12,7 +12,7 @@ const parser = new Parser({
 
 // Map of sport -> array of YouTube Channel IDs
 const CHANNELS: Record<string, string[]> = {
-  nba: ['UCWJ2lWNubArHWmf3FIHbfcQ', 'UCqQo7ewe87aYAe7ub5UqXMw'], // NBA, House of Highlights
+  basketball: ['UCWJ2lWNubArHWmf3FIHbfcQ', 'UCqQo7ewe87aYAe7ub5UqXMw'], // NBA, House of Highlights
   nfl: ['UCDVYQ4Zhbm3S2dlz7P1GBDg'], // NFL
   motorsport: [
     'UC0R3-zRpeIVUnavcRTPWzZA', // F1
@@ -36,6 +36,19 @@ const ICOS: Record<string, string> = {
   nba: '🏀', nfl: '🏈', motorsport: '🏎️', afl: '🏈', nrl: '🏉', cricket: '🏏', rugby: '🏉', aleague: '⚽'
 };
 
+interface Video {
+  id: string;
+  sport: string;
+  title: string;
+  dur: string;
+  views: string;
+  likes: string;
+  time: string;
+  ico: string;
+  yt: string;
+  publishedAt: number;
+}
+
 function formatTimeAgo(dateStr: string): string {
   try {
     const parsed = Date.parse(dateStr);
@@ -54,39 +67,46 @@ function formatTimeAgo(dateStr: string): string {
   }
 }
 
-// In-memory cache
-let videoCache: { timestamp: number; data: any[] } = { timestamp: 0, data: [] };
+// Cache each sport independently so a selected section never waits on every channel.
+const videoCache = new Map<string, { timestamp: number; data: Video[] }>();
 const CACHE_TTL = 15 * 60 * 1000;
+const YOUTUBE_FETCH_TIMEOUT_MS = 6_000;
 
-export async function fetchVideos() {
+export async function fetchVideos(sport = 'all'): Promise<Video[]> {
   const now = Date.now();
-  if (now - videoCache.timestamp < CACHE_TTL && videoCache.data.length > 0) {
-    return videoCache.data;
+  const cached = videoCache.get(sport);
+  if (cached && now - cached.timestamp < CACHE_TTL) {
+    return cached.data;
   }
 
-  const allVideos: any[] = [];
+  const allSportsCache = videoCache.get('all');
+  if (sport !== 'all' && allSportsCache && now - allSportsCache.timestamp < CACHE_TTL) {
+    return allSportsCache.data.filter((video) => video.sport === sport);
+  }
+
+  const allVideos: Video[] = [];
   const fetchPromises: Promise<void>[] = [];
 
-  for (const [sport, channelIds] of Object.entries(CHANNELS)) {
+  for (const [videoSport, channelIds] of Object.entries(CHANNELS)) {
+    if (sport !== 'all' && videoSport !== sport) continue;
     for (const channelId of channelIds) {
       const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
       fetchPromises.push(
         (async () => {
           try {
-            const ctrl = new AbortController();
-            const timer = setTimeout(() => ctrl.abort(), 6000);
             const res = await fetch(url, {
-              signal: ctrl.signal,
+              signal: AbortSignal.timeout(YOUTUBE_FETCH_TIMEOUT_MS),
               headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/91.0' }
             });
-            clearTimeout(timer);
             if (!res.ok) return;
 
             const xml = await res.text();
             const feed = await parser.parseString(xml);
 
             for (const item of feed.items || []) {
-              const ytId = item.ytVideoId || (item as any).id?.replace('yt:video:', '') || item.guid?.replace('yt:video:', '');
+              const ytId = item.ytVideoId
+                || (item as { id?: string }).id?.replace('yt:video:', '')
+                || item.guid?.replace('yt:video:', '');
               if (!ytId) continue;
               
               // Try to get views from mediaGroup
@@ -109,19 +129,24 @@ export async function fetchVideos() {
 
               allVideos.push({
                 id: ytId,
-                sport,
+                sport: videoSport,
                 title: item.title || '',
                 dur: '', // YouTube RSS doesn't provide duration unfortunately
                 views,
                 likes: '', // Not consistently provided
                 time: item.pubDate ? formatTimeAgo(item.pubDate) : 'recently',
-                ico: ICOS[sport] || '🎥',
+                ico: ICOS[videoSport] || '🎥',
                 yt: ytId,
                 publishedAt: item.pubDate ? Date.parse(item.pubDate) : 0
               });
             }
-          } catch (e) {
-            console.error(`Error fetching YouTube feed for ${channelId}:`, e);
+          } catch (error) {
+            if (!(error instanceof Error && error.name === 'AbortError')) {
+              const cause = error instanceof Error && error.cause instanceof Error
+                ? error.cause.message
+                : error instanceof Error ? error.message : 'Unknown error';
+              console.warn(`YouTube source unavailable for ${channelId} (${cause})`);
+            }
           }
         })()
       );
@@ -133,6 +158,16 @@ export async function fetchVideos() {
   // Sort by newest
   allVideos.sort((a, b) => b.publishedAt - a.publishedAt);
 
-  videoCache = { timestamp: now, data: allVideos };
+  videoCache.set(sport, { timestamp: now, data: allVideos });
+
+  if (sport === 'all') {
+    for (const sportKey of Object.keys(CHANNELS)) {
+      videoCache.set(sportKey, {
+        timestamp: now,
+        data: allVideos.filter((video) => video.sport === sportKey),
+      });
+    }
+  }
+
   return allVideos;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { TEAMS, Team, SPORT_ACCENTS } from '@/data/teams';
 
 interface Article {
@@ -13,10 +13,65 @@ interface Article {
   snippet: string;
   timeAgo: string;
   url: string;
+  media?: ArticleMedia;
   img?: string;
   isLive?: boolean;
   kw?: string[];
   publishedAt: string;
+}
+
+type ArticleMedia =
+  | {
+      type: 'image';
+      url: string;
+    }
+  | {
+      type: 'video';
+      thumbnailUrl?: string;
+      embedUrl?: string;
+      provider?: 'youtube' | 'vimeo' | 'video';
+    };
+
+function ArticleMediaThumb({ article, priority = false }: { article: Article; priority?: boolean }) {
+  const mediaUrl = article.media?.type === 'image'
+    ? article.media.url
+    : article.media?.type === 'video'
+      ? article.media.thumbnailUrl
+      : article.img;
+
+  return (
+    <>
+      {mediaUrl ? (
+        <>
+          <img
+            src={mediaUrl}
+            alt={article.headline}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchPriority={priority ? 'high' : 'low'}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.add('show');
+            }}
+          />
+          <div className="card-thumb-emoji media-fallback">&#128240;</div>
+        </>
+      ) : (
+        <div className="card-thumb-emoji">&#128240;</div>
+      )}
+      {article.media?.type === 'video' && (
+        <>
+          <div className="thumb-video">
+            <span>&#9654;</span> VIDEO
+          </div>
+          <div className="video-hover-play">
+            <span>&#9654;</span>
+          </div>
+        </>
+      )}
+    </>
+  );
 }
 
 interface PodcastEpisode {
@@ -44,24 +99,14 @@ interface Score {
   live?: boolean;
 }
 
-interface SocialPost {
+interface Video {
   id: string;
-  plat: string;
-  handle: string;
-  uname: string;
-  verified: boolean;
   sport: string;
-  teams: string[];
-  players: string[];
-  trending?: boolean;
-  score: number;
+  title: string;
+  dur: string;
+  views: string;
   time: string;
-  likes: string;
-  reposts: string;
-  comments: string;
-  text: string;
-  url?: string;
-  img?: string;
+  yt: string;
 }
 
 const SPORTS = [
@@ -76,94 +121,11 @@ const SPORTS = [
   { id: 'motorsport', name: 'Motorsports', ico: '🏎️' }
 ];
 
-const getAvatarColor = (name: string) => {
-  let hashVal = 0;
-  for (let i = 0; i < name.length; i++) {
-    hashVal = name.charCodeAt(i) + ((hashVal << 5) - hashVal);
-  }
-  const colors = [
-    '#e11d48', '#db2777', '#c026d3', '#9333ea', '#7c3aed',
-    '#2563eb', '#0284c7', '#0d9488', '#059669', '#16a34a',
-    '#ca8a04', '#ea580c', '#dc2626'
-  ];
-  return colors[Math.abs(hashVal) % colors.length];
-};
-
-const renderSocialCard = (post: SocialPost) => {
-  const isInstagram = post.plat === 'instagram';
-  const isFacebook = post.plat === 'facebook';
-  const isX = post.plat === 'x';
-  const isGenerated = post.id.startsWith('gen-');
-
-  const avatarBg = getAvatarColor(post.handle);
-
-  return (
-    <a
-      key={post.id}
-      href={post.url || 'https://x.com'}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="br-social-card"
-    >
-      <div className="br-card-header">
-        <div className="br-card-avatar" style={{ backgroundColor: avatarBg, color: '#fff', border: 'none' }}>
-          {post.handle.charAt(0)}
-        </div>
-        <div className="br-card-user-info">
-          <div className="br-card-name-row">
-            <span className="br-card-display-name">{post.handle}</span>
-            {post.verified && (
-              <span className="br-verified-badge" title="Verified Account">✓</span>
-            )}
-            <span className="br-card-time">{post.time}</span>
-          </div>
-          <span className="br-card-handle">
-            {post.uname}
-            {isGenerated && (
-              <span style={{ fontSize: 9, backgroundColor: 'rgba(255,255,255,0.08)', color: 'var(--muted)', padding: '2px 6px', borderRadius: 4, marginLeft: 8, letterSpacing: '0.05em' }}>SIMULATED</span>
-            )}
-          </span>
-        </div>
-        <div className="br-card-plat-icon">
-          {isX && (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          )}
-          {isInstagram && (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          )}
-          {isFacebook && (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          )}
-        </div>
-      </div>
-
-      <p className="br-card-text">{post.text}</p>
-
-      {post.img && (
-        <div className="br-card-media">
-          <img src={post.img} alt="Post media" loading="lazy" />
-        </div>
-      )}
-
-      <div className="br-card-footer">
-        {isX && (isGenerated ? <span>Open Official X Timeline</span> : <span>View on X</span>)}
-        {isInstagram && (isGenerated ? <span>Open Instagram Profile</span> : <span>View on Instagram</span>)}
-        {isFacebook && (isGenerated ? <span>Open Facebook Page</span> : <span>View on Facebook</span>)}
-      </div>
-    </a>
-  );
-};
-
-
 export default function Home() {
+  const podcastRequestRef = useRef(0);
+  const newsRequestRef = useRef(0);
+  const videoRequestRef = useRef(0);
+
   // Navigation & View states
   const [activeSport, setActiveSport] = useState<string>('all');
   const [activeTab, setActiveTab] = useState<string>('news');
@@ -172,9 +134,8 @@ export default function Home() {
   // Data states
   const [articles, setArticles] = useState<Article[]>([]);
   const [podcasts, setPodcasts] = useState<PodcastEpisode[]>([]);
-  const [videos, setVideos] = useState<any[]>([]);
+  const [videos, setVideos] = useState<Video[]>([]);
   const [scores, setScores] = useState<Score[]>([]);
-  const [socialPosts, setSocialPosts] = useState<SocialPost[]>([]);
 
   // User personalization states
   const [bookmarks, setBookmarks] = useState<string[]>([]);
@@ -188,20 +149,15 @@ export default function Home() {
     news: true,
     podcasts: true,
     videos: true,
-    scores: true,
-    social: true
+    scores: true
   });
 
   // Pagination states
-  const PAGE_SIZE = 9;
+  const PAGE_SIZE = 50;
   const [visibleCount, setVisibleCount] = useState<number>(PAGE_SIZE);
-  const [loadingMore, setLoadingMore] = useState<boolean>(false);
 
-  const handleLoadMore = async () => {
-    setLoadingMore(true);
-    await new Promise(r => setTimeout(r, 400)); // smooth visual feedback
+  const handleLoadMore = () => {
     setVisibleCount(prev => prev + PAGE_SIZE);
-    setLoadingMore(false);
   };
 
   // Current Date display
@@ -228,10 +184,16 @@ export default function Home() {
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
     fetchNews();
-    fetchPodcastsData();
-    fetchVideosData();
-    fetchSocialData();
   }, [activeSport]);
+
+  // Heavy secondary feeds load only when their view is requested.
+  useEffect(() => {
+    if (activeTab === 'podcasts') {
+      fetchPodcastsData(activeSport);
+    } else if (activeTab === 'video') {
+      fetchVideosData(activeSport);
+    }
+  }, [activeSport, activeTab]);
 
   // Reset pagination when switching tabs
   useEffect(() => {
@@ -254,60 +216,78 @@ export default function Home() {
   ];
 
   const fetchNews = async () => {
+    const requestId = newsRequestRef.current + 1;
+    newsRequestRef.current = requestId;
     setLoading(prev => ({ ...prev, news: true }));
     try {
       const res = await fetch(`/api/feeds?sport=${activeSport}`);
       if (!res.ok) throw new Error(`HTTP error ${res.status}`);
       const data = await res.json();
-      if (data.success) {
+      if (newsRequestRef.current === requestId && data.success) {
         setArticles(data.articles);
       }
     } catch (e) {
       console.error(e);
     } finally {
-      setLoading(prev => ({ ...prev, news: false }));
+      if (newsRequestRef.current === requestId) {
+        setLoading(prev => ({ ...prev, news: false }));
+      }
     }
   };
 
-  const fetchPodcastsData = async () => {
+  const fetchPodcastsData = async (sport: string) => {
+    const requestId = podcastRequestRef.current + 1;
+    podcastRequestRef.current = requestId;
+
     setLoading(prev => ({ ...prev, podcasts: true }));
+    setPodcasts([]);
+
     try {
-      const res = await fetch(`/api/podcasts?sport=${activeSport}`);
+      const res = await fetch(`/api/podcasts?sport=${encodeURIComponent(sport)}`);
       if (!res.ok) throw new Error(`HTTP error ${res.status}`);
       const data = await res.json();
+      if (podcastRequestRef.current !== requestId) return;
+
       if (data.success) {
-        setPodcasts(data.podcasts);
+        const podcastList = Array.isArray(data.podcasts) ? data.podcasts as PodcastEpisode[] : [];
+        setPodcasts(sport === 'all' ? podcastList : podcastList.filter(podcast => podcast.sport === sport));
       } else {
-        setPodcasts(FALLBACK_PODCASTS.filter(p => activeSport === 'all' || p.sport === activeSport));
+        setPodcasts([]);
       }
     } catch (e) {
-      console.warn("Podcasts fetch failed/blocked, serving local fallbacks.", e);
-      setPodcasts(FALLBACK_PODCASTS.filter(p => activeSport === 'all' || p.sport === activeSport));
+      if (podcastRequestRef.current !== requestId) return;
+      console.warn("Podcasts fetch failed.", e);
+      setPodcasts([]);
     } finally {
+      if (podcastRequestRef.current !== requestId) return;
       setLoading(prev => ({ ...prev, podcasts: false }));
     }
   };
 
-  const fetchVideosData = async () => {
+  const fetchVideosData = async (sport: string) => {
+    const requestId = videoRequestRef.current + 1;
+    videoRequestRef.current = requestId;
     setLoading(prev => ({ ...prev, videos: true }));
     try {
-      const res = await fetch(`/api/videos?sport=${activeSport}`);
+      const res = await fetch(`/api/videos?sport=${encodeURIComponent(sport)}`);
       if (!res.ok) throw new Error(`HTTP error ${res.status}`);
       const data = await res.json();
-      if (data.success) {
+      if (videoRequestRef.current === requestId && data.success) {
         setVideos(data.videos);
       }
     } catch (e) {
       console.error(e);
     } finally {
-      setLoading(prev => ({ ...prev, videos: false }));
+      if (videoRequestRef.current === requestId) {
+        setLoading(prev => ({ ...prev, videos: false }));
+      }
     }
   };
 
   const fetchScores = async () => {
     setLoading(prev => ({ ...prev, scores: true }));
     try {
-      const res = await fetch(`/api/match-updates`);
+      const res = await fetch(`/api/match-updates?sport=${encodeURIComponent(activeSport)}`);
       if (!res.ok) throw new Error(`HTTP error ${res.status}`);
       const data = await res.json();
       if (data.success) {
@@ -315,27 +295,10 @@ export default function Home() {
       } else {
         setScores(FALLBACK_SCORES);
       }
-    } catch (e) {
-      console.warn("Scores fetch failed/blocked, serving local fallbacks.", e);
+    } catch {
       setScores(FALLBACK_SCORES);
     } finally {
       setLoading(prev => ({ ...prev, scores: false }));
-    }
-  };
-
-  const fetchSocialData = async () => {
-    setLoading(prev => ({ ...prev, social: true }));
-    try {
-      const res = await fetch(`/api/social?sport=${activeSport}`);
-      if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-      const data = await res.json();
-      if (data.success) {
-        setSocialPosts(data.posts);
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(prev => ({ ...prev, social: false }));
     }
   };
 
@@ -390,15 +353,6 @@ export default function Home() {
     return videos.filter(v => v.title.toLowerCase().includes(q));
   }, [videos, searchQuery]);
 
-  const filteredSocial = useMemo(() => {
-    if (!searchQuery) return socialPosts;
-    const q = searchQuery.toLowerCase();
-    return socialPosts.filter(p =>
-      p.text.toLowerCase().includes(q) ||
-      p.handle.toLowerCase().includes(q)
-    );
-  }, [socialPosts, searchQuery]);
-
   // Personalised board computations
   const personalisedNews = useMemo(() => {
     if (followedTeams.length === 0) return [];
@@ -413,13 +367,6 @@ export default function Home() {
       });
     });
   }, [articles, followedTeams]);
-
-  const personalisedSocial = useMemo(() => {
-    if (followedTeams.length === 0) return [];
-    return socialPosts.filter(p =>
-      p.teams.some(teamId => followedTeams.includes(teamId))
-    );
-  }, [socialPosts, followedTeams]);
 
   const personalisedScores = useMemo(() => {
     if (followedTeams.length === 0) return [];
@@ -436,6 +383,10 @@ export default function Home() {
   }, [scores, followedTeams]);
 
   const activeColor = SPORT_ACCENTS[activeSport] || 'var(--red)';
+  const visiblePodcasts = useMemo(
+    () => activeSport === 'all' ? podcasts : podcasts.filter(podcast => podcast.sport === activeSport),
+    [activeSport, podcasts]
+  );
 
   return (
     <>
@@ -475,7 +426,7 @@ export default function Home() {
             <span className="search-icon">🔍</span>
             <input
               type="text"
-              placeholder="Search news, videos, social..."
+              placeholder="Search news and videos..."
               className="search-input"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -555,12 +506,6 @@ export default function Home() {
           >
             📊 Live Scores
           </button>
-          <button
-            className={`pill ${activeTab === 'social' ? 'active' : ''}`}
-            onClick={() => setActiveTab('social')}
-          >
-            💬 Social Feed
-          </button>
         </div>
 
         <div className="two-col">
@@ -588,17 +533,6 @@ export default function Home() {
                   <>
                     {/* Render Articles */}
                     {(() => {
-                      const SPORT_FB: Record<string, string> = {
-                        afl: 'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=600&q=80&auto=format&fit=crop',
-                        nrl: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80&auto=format&fit=crop',
-                        cricket: 'https://images.unsplash.com/photo-1531415074968-03611b674b0f?w=600&q=80&auto=format&fit=crop',
-                        rugby: 'https://images.unsplash.com/photo-1583448368793-6f62ac2024e8?w=600&q=80&auto=format&fit=crop',
-                        aleague: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80&auto=format&fit=crop',
-                        basketball: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80&auto=format&fit=crop',
-                        nfl: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=600&q=80&auto=format&fit=crop',
-                        motorsport: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=600&q=80&auto=format&fit=crop',
-                      };
-
                       const fullList = searchQuery === 'is:bookmarked'
                         ? articles.filter(a => bookmarks.includes(a.url))
                         : filteredArticles;
@@ -614,11 +548,15 @@ export default function Home() {
                         );
                       }
 
-                      // Apply pagination
-                      const visibleList = fullList.slice(0, visibleCount);
+                      // The feed API already limits each source to 50 recent stories.
+                      // Render the complete selected-sport result so one busy publisher
+                      // cannot hide stories returned by the other RSS sources.
+                      const visibleList = activeTab === 'news'
+                        ? fullList
+                        : fullList.slice(0, visibleCount);
                       const heroItem = visibleList[0];
                       const otherItems = visibleList.slice(1);
-                      const hasMore = visibleCount < fullList.length;
+                      const hasMore = activeTab !== 'news' && visibleCount < fullList.length;
 
                       return (
                         <>
@@ -633,18 +571,7 @@ export default function Home() {
                               >
                                 <div className="card-stripe"></div>
                                 <div className="card-thumb">
-                                  {heroItem.img ? (
-                                    <img
-                                      src={heroItem.img}
-                                      alt={heroItem.headline}
-                                      onError={(e) => {
-                                        e.currentTarget.onerror = null;
-                                        e.currentTarget.src = SPORT_FB[heroItem.sport] || SPORT_FB['aleague'];
-                                      }}
-                                    />
-                                  ) : (
-                                    <div className="card-thumb-emoji">📰</div>
-                                  )}
+                                  <ArticleMediaThumb article={heroItem} priority />
                                   {heroItem.isLive && (
                                     <div className="thumb-live">
                                       <div className="live-dot"></div>LIVE
@@ -682,18 +609,7 @@ export default function Home() {
                               >
                                 <div className="card-stripe"></div>
                                 <div className="card-thumb">
-                                  {item.img ? (
-                                    <img
-                                      src={item.img}
-                                      alt={item.headline}
-                                      onError={(e) => {
-                                        e.currentTarget.onerror = null;
-                                        e.currentTarget.src = SPORT_FB[item.sport] || SPORT_FB['aleague'];
-                                      }}
-                                    />
-                                  ) : (
-                                    <div className="card-thumb-emoji">📰</div>
-                                  )}
+                                  <ArticleMediaThumb article={item} />
                                   {item.isLive && (
                                     <div className="thumb-live">
                                       <div className="live-dot"></div>LIVE
@@ -726,15 +642,8 @@ export default function Home() {
                               <button
                                 className="load-more-btn"
                                 onClick={handleLoadMore}
-                                disabled={loadingMore}
                               >
-                                {loadingMore ? (
-                                  <><span className="spinner" style={{ display: 'inline-block', width: 14, height: 14, borderWidth: 2, marginTop: 0, marginBottom: 0, marginLeft: 0, marginRight: 8, verticalAlign: 'middle' }}></span> Loading Stories...</>
-                                ) : (
-                                  <>
-                                    Discover More Stories
-                                  </>
-                                )}
+                                Discover More Stories
                               </button>
                             </div>
                           )}
@@ -766,7 +675,7 @@ export default function Home() {
                     <span style={{ fontSize: 48 }}>⭐</span>
                     <h3 style={{ fontFamily: 'var(--font-oswald)', textTransform: 'uppercase', fontSize: 20, margin: '16px 0 8px' }}>Personalise Your Hub</h3>
                     <p style={{ color: 'var(--muted)', maxWidth: 400, margin: '0 auto 20px', fontSize: 13 }}>
-                      Follow your favourite AFL, NRL, Cricket, Soccer, or Motorsport teams to aggregate a tailored news feed, livescores, and social posts.
+                      Follow your favourite AFL, NRL, Cricket, Soccer, or Motorsport teams to aggregate tailored news and live scores.
                     </p>
                     <button className="btn-solid" style={{ backgroundColor: activeColor }} onClick={() => setShowPersonaliseModal(true)}>
                       Choose Teams
@@ -834,11 +743,7 @@ export default function Home() {
                             >
                               <div className="card-stripe"></div>
                               <div className="card-thumb">
-                                {item.img ? (
-                                  <img src={item.img} alt={item.headline} />
-                                ) : (
-                                  <div className="card-thumb-emoji">📰</div>
-                                )}
+                                <ArticleMediaThumb article={item} />
                               </div>
                               <div className="card-body">
                                 <span className="tag-pub" style={{ color: item.publisherColor }}>{item.publisherName}</span>
@@ -851,17 +756,6 @@ export default function Home() {
                       )}
                     </div>
 
-                    {/* Personalised Social */}
-                    <div>
-                      <h4 style={{ fontFamily: 'var(--font-oswald)', textTransform: 'uppercase', fontSize: 14, borderBottom: '1px solid var(--rule)', paddingBottom: 6, marginBottom: 12 }}>Team Social Feed</h4>
-                      {personalisedSocial.length === 0 ? (
-                        <p style={{ color: 'var(--muted)', fontSize: 12, padding: 12 }}>No matching social posts from your teams.</p>
-                      ) : (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                          {personalisedSocial.map((post) => renderSocialCard(post))}
-                        </div>
-                      )}
-                    </div>
                   </div>
                 )}
               </div>
@@ -892,6 +786,8 @@ export default function Home() {
                             <img
                               src={`https://img.youtube.com/vi/${vid.yt}/mqdefault.jpg`}
                               alt={vid.title}
+                              loading="lazy"
+                              decoding="async"
                             />
                             <div className="video-duration">{vid.dur}</div>
                             <div className="video-hover-play">
@@ -913,13 +809,8 @@ export default function Home() {
                         <button
                           className="load-more-btn"
                           onClick={handleLoadMore}
-                          disabled={loadingMore}
                         >
-                          {loadingMore ? (
-                            <><span className="spinner" style={{ display: 'inline-block', width: 14, height: 14, borderWidth: 2, marginTop: 0, marginBottom: 0, marginLeft: 0, marginRight: 8, verticalAlign: 'middle' }}></span> Loading Videos...</>
-                          ) : (
-                            <>Discover More Videos</>
-                          )}
+                          Discover More Videos
                         </button>
                       </div>
                     )}
@@ -933,7 +824,7 @@ export default function Home() {
               <div className="panel active">
                 <div className="sec-hdr">
                   <h2 className="sec-title">Sports <span className="acc" style={{ color: activeColor }}>Podcasts</span></h2>
-                  <span className="sec-count">{podcasts.length} SHOWS</span>
+                  <span className="sec-count">{visiblePodcasts.length} EPISODES</span>
                 </div>
 
                 {loading.podcasts ? (
@@ -943,7 +834,7 @@ export default function Home() {
                 ) : (
                   <>
                     <div className="pod-grid">
-                      {podcasts.slice(0, visibleCount).map((pod) => (
+                      {visiblePodcasts.slice(0, visibleCount).map((pod) => (
                         <a
                           key={pod.id}
                           className="pod-card"
@@ -957,6 +848,8 @@ export default function Home() {
                               <img
                                 src={pod.artwork}
                                 alt={pod.title}
+                                loading="lazy"
+                                decoding="async"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                 onError={(e) => {
                                   e.currentTarget.style.display = 'none';
@@ -969,7 +862,7 @@ export default function Home() {
                                 }}
                               />
                             ) : pod.ico.startsWith('http') || pod.ico.startsWith('/') ? (
-                              <img src={pod.ico} alt={pod.title} />
+                              <img src={pod.ico} alt={pod.title} loading="lazy" decoding="async" />
                             ) : (
                               pod.ico
                             )}
@@ -989,18 +882,13 @@ export default function Home() {
                         </a>
                       ))}
                     </div>
-                    {visibleCount < podcasts.length && (
+                    {visibleCount < visiblePodcasts.length && (
                       <div className="load-more">
                         <button
                           className="load-more-btn"
                           onClick={handleLoadMore}
-                          disabled={loadingMore}
                         >
-                          {loadingMore ? (
-                            <><span className="spinner" style={{ display: 'inline-block', width: 14, height: 14, borderWidth: 2, marginTop: 0, marginBottom: 0, marginLeft: 0, marginRight: 8, verticalAlign: 'middle' }}></span> Loading Podcasts...</>
-                          ) : (
-                            <>Discover More Podcasts</>
-                          )}
+                          Discover More Podcasts
                         </button>
                       </div>
                     )}
@@ -1044,26 +932,6 @@ export default function Home() {
               </div>
             )}
 
-            {/* ── SOCIAL TAB ── */}
-            {activeTab === 'social' && (
-              <div className="panel active">
-                <div className="sec-hdr">
-                  <h2 className="sec-title">Social <span className="acc" style={{ color: activeColor }}>Feed</span></h2>
-                  <span className="sec-count">{filteredSocial.length} POSTS</span>
-                </div>
-
-                {loading.social ? (
-                  <div style={{ textAlign: 'center', padding: '40px', color: 'var(--muted)', fontFamily: 'var(--font-oswald)' }}>
-                    ⚡ SYNCING FEED...
-                  </div>
-                ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                    {filteredSocial.map((post) => renderSocialCard(post))}
-                  </div>
-                )}
-              </div>
-            )}
-
           </div>
 
           {/* Sidebar Area */}
@@ -1087,59 +955,6 @@ export default function Home() {
               >
                 Manage Personalisation
               </button>
-            </div>
-
-            {/* Trending Topics (inspired by sportsdesk_v5) */}
-            <div style={{ background: 'var(--surface)', padding: 16, border: '1px solid var(--rule)', borderRadius: 'var(--radius2)', marginBottom: 24 }}>
-              <h4 style={{ fontFamily: 'var(--font-oswald)', textTransform: 'uppercase', fontSize: 13, borderBottom: '1px solid var(--rule)', paddingBottom: 6, marginBottom: 12 }}>Trending Topics</h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <li>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery('Origin'); setActiveTab('news'); }} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                    <span>#StateOfOrigin</span>
-                    <span style={{ color: 'var(--muted)' }}>14.2k posts</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery('MCG'); setActiveTab('news'); }} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                    <span>#MCGFridayNight</span>
-                    <span style={{ color: 'var(--muted)' }}>9.8k posts</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery('Smith'); setActiveTab('news'); }} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                    <span>#AUSvINDTest</span>
-                    <span style={{ color: 'var(--muted)' }}>22.1k posts</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery('Lions'); setActiveTab('news'); }} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                    <span>#LionsTour2026</span>
-                    <span style={{ color: 'var(--muted)' }}>6.5k posts</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Quick Poll */}
-            <div style={{ background: 'var(--surface)', padding: 16, border: '1px solid var(--rule)', borderRadius: 'var(--radius2)' }}>
-              <h4 style={{ fontFamily: 'var(--font-oswald)', textTransform: 'uppercase', fontSize: 13, borderBottom: '1px solid var(--rule)', paddingBottom: 6, marginBottom: 12 }}>Fan Poll</h4>
-              <p style={{ fontSize: 12, fontWeight: 'bold', marginBottom: 10 }}>Who wins tonight's MCG blockbuster clash?</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <button
-                  className="btn-outline"
-                  style={{ textAlign: 'left', padding: '6px 12px', width: '100%' }}
-                  onClick={() => alert('Thanks for voting! Collingwood: 64%')}
-                >
-                  Collingwood (64%)
-                </button>
-                <button
-                  className="btn-outline"
-                  style={{ textAlign: 'left', padding: '6px 12px', width: '100%' }}
-                  onClick={() => alert('Thanks for voting! Richmond: 36%')}
-                >
-                  Richmond (36%)
-                </button>
-              </div>
             </div>
 
           </div>

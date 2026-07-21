@@ -3,7 +3,7 @@
     {
       "name": "AFL.com.au (Official)",
       "url": "https://www.afl.com.au/news",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:afl.com.au&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "afl"
     },
     {
@@ -15,7 +15,7 @@
     {
       "name": "Sydney Morning Herald — Sport",
       "url": "https://www.smh.com.au/sport/afl",
-      "rss": "https://www.smh.com.au/rss/sport.xml",
+      "rss": null,
       "sport": "afl"
     },
     {
@@ -27,7 +27,7 @@
     {
       "name": "Fox Sports — AFL",
       "url": "https://www.foxsports.com.au/afl",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:foxsports.com.au+afl&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "afl"
     },
     {
@@ -51,7 +51,7 @@
     {
       "name": "SEN — AFL",
       "url": "https://www.sen.com.au/afl",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:sen.com.au+afl&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "afl"
     },
     {
@@ -63,7 +63,7 @@
     {
       "name": "NRL.com (Official)",
       "url": "https://www.nrl.com/news/",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:nrl.com/news&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "nrl"
     },
     {
@@ -75,13 +75,13 @@
     {
       "name": "Fox Sports — NRL",
       "url": "https://www.foxsports.com.au/nrl",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:foxsports.com.au+nrl&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "nrl"
     },
     {
       "name": "ABC Sport — NRL",
       "url": "https://www.abc.net.au/news/sport/nrl",
-      "rss": "https://www.abc.net.au/news/feed/2942460/rss.xml",
+      "rss": "https://www.abc.net.au/news/feed/101210900/rss.xml",
       "sport": "nrl"
     },
     {
@@ -93,7 +93,7 @@
     {
       "name": "Wide World of Sports (Nine) — NRL",
       "url": "https://wwos.nine.com.au/nrl",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:wwos.nine.com.au+nrl&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "nrl"
     },
     {
@@ -123,13 +123,13 @@
     {
       "name": "ESPNcricinfo",
       "url": "https://www.espncricinfo.com/cricket-news",
-      "rss": null,
+      "rss": "https://www.espncricinfo.com/rss/content/story/feeds/0.xml",
       "sport": "cricket"
     },
     {
       "name": "Cricket Australia (Official)",
       "url": "https://www.cricket.com.au/news",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:cricket.com.au&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "cricket"
     },
     {
@@ -147,13 +147,13 @@
     {
       "name": "Fox Sports — Cricket",
       "url": "https://www.foxsports.com.au/cricket",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:foxsports.com.au+cricket&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "cricket"
     },
     {
       "name": "Sky Sports — Cricket",
       "url": "https://www.skysports.com/cricket",
-      "rss": "https://www.theguardian.com/football/rss",
+      "rss": "https://www.skysports.com/rss/12040",
       "sport": "cricket"
     },
     {
@@ -183,13 +183,13 @@
     {
       "name": "Rugby Australia (Official)",
       "url": "https://www.rugby.com.au/news",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:rugby.com.au&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "rugby"
     },
     {
       "name": "ABC Sport — Rugby Union",
       "url": "https://www.abc.net.au/news/sport/rugby-union",
-      "rss": "https://www.abc.net.au/news/feed/51120/rss.xml",
+      "rss": "https://www.abc.net.au/news/feed/7077058/rss.xml",
       "sport": "rugby"
     },
     {
@@ -201,7 +201,7 @@
     {
       "name": "Fox Sports — Rugby",
       "url": "https://www.foxsports.com.au/rugby",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:foxsports.com.au+rugby&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "rugby"
     },
     {
@@ -225,7 +225,7 @@
     {
       "name": "RugbyPass",
       "url": "https://www.rugbypass.com",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:rugbypass.com&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "rugby"
     },
     {
@@ -249,7 +249,7 @@
     {
       "name": "Sky Sports — Football",
       "url": "https://www.skysports.com/football",
-      "rss": "https://www.theguardian.com/football/rss",
+      "rss": "https://www.skysports.com/rss/12040",
       "sport": "aleague"
     },
     {
@@ -261,19 +261,19 @@
     {
       "name": "ESPN — Soccer",
       "url": "https://www.espn.com/soccer/",
-      "rss": "https://www.cbssports.com/rss/headlines/soccer/",
+      "rss": null,
       "sport": "aleague"
     },
     {
       "name": "Goal.com",
       "url": "https://www.goal.com",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:goal.com&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "aleague"
     },
     {
       "name": "Premier League (Official)",
       "url": "https://www.premierleague.com/news",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:premierleague.com&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "aleague"
     },
     {
@@ -303,19 +303,19 @@
     {
       "name": "ESPN — NBA",
       "url": "https://www.espn.com/nba/",
-      "rss": "https://sports.yahoo.com/nba/rss",
+      "rss": null,
       "sport": "basketball"
     },
     {
       "name": "NBA.com (Official)",
       "url": "https://www.nba.com/news",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:nba.com/news&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "basketball"
     },
     {
       "name": "Sky Sports — Basketball",
       "url": "https://www.skysports.com/nba",
-      "rss": null,
+      "rss": "https://www.skysports.com/rss/12040",
       "sport": "basketball"
     },
     {
@@ -327,31 +327,31 @@
     {
       "name": "Bleacher Report — NBA",
       "url": "https://bleacherreport.com/nba",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:bleacherreport.com+nba&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "basketball"
     },
     {
       "name": "NBL Australia (Official)",
       "url": "https://nbl.com.au/news",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:nbl.com.au&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "basketball"
     },
     {
       "name": "The Athletic — NBA",
       "url": "https://theathletic.com/nba/",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:nytimes.com/athletic+nba&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "basketball"
     },
     {
       "name": "Yahoo Sports — NBA",
       "url": "https://sports.yahoo.com/nba/",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:sports.yahoo.com+nba&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "basketball"
     },
     {
       "name": "HoopsHype",
       "url": "https://hoopshype.com",
-      "rss": "https://www.cbssports.com/rss/headlines/nba/",
+      "rss": null,
       "sport": "basketball"
     },
     {
@@ -363,13 +363,13 @@
     {
       "name": "ESPN — NFL",
       "url": "https://www.espn.com/nfl/",
-      "rss": "https://www.cbssports.com/rss/headlines/nfl/",
+      "rss": null,
       "sport": "nfl"
     },
     {
       "name": "NFL.com (Official)",
       "url": "https://www.nfl.com/news/",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:nfl.com/news&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "nfl"
     },
     {
@@ -381,7 +381,7 @@
     {
       "name": "Sky Sports — NFL",
       "url": "https://www.skysports.com/nfl",
-      "rss": "https://feeds.bbci.co.uk/sport/american-football/rss.xml",
+      "rss": "https://www.skysports.com/rss/12040",
       "sport": "nfl"
     },
     {
@@ -393,13 +393,13 @@
     {
       "name": "Pro Football Talk (NBC Sports)",
       "url": "https://www.nbcsports.com/nfl/profootballtalk",
-      "rss": null,
+      "rss": "https://profootballtalk.nbcsports.com/feed/",
       "sport": "nfl"
     },
     {
       "name": "Bleacher Report — NFL",
       "url": "https://bleacherreport.com/nfl",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:bleacherreport.com+nfl&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "nfl"
     },
     {
@@ -423,25 +423,25 @@
     {
       "name": "Formula1.com (Official)",
       "url": "https://www.formula1.com/en/latest/all",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:formula1.com&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "motorsport"
     },
     {
       "name": "Autosport — F1",
       "url": "https://www.autosport.com/f1/news",
-      "rss": "https://feeds.bbci.co.uk/sport/formula1/rss.xml",
+      "rss": "https://www.autosport.com/rss/f1/news/",
       "sport": "motorsport"
     },
     {
       "name": "Motorsport.com",
       "url": "https://www.motorsport.com/f1/news/",
-      "rss": null,
+      "rss": "https://www.motorsport.com/rss/f1/news/",
       "sport": "motorsport"
     },
     {
       "name": "Sky Sports — F1",
       "url": "https://www.skysports.com/f1",
-      "rss": null,
+      "rss": "https://www.skysports.com/rss/12040",
       "sport": "motorsport"
     },
     {
@@ -459,13 +459,13 @@
     {
       "name": "Crash.net",
       "url": "https://www.crash.net/f1",
-      "rss": null,
+      "rss": "https://www.crash.net/rss/f1",
       "sport": "motorsport"
     },
     {
       "name": "Supercars.com (Official, Australia)",
       "url": "https://www.supercars.com/news/",
-      "rss": null,
+      "rss": "https://news.google.com/rss/search?q=site:supercars.com&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "motorsport"
     },
     {
@@ -485,37 +485,50 @@
     {
       "name": "AFL Daily",
       "hosts": "Damian Barrett, Kate McCarthy",
-      "url": "https://podcasts.apple.com/au/podcast/afl-daily/id1450057092",
+      "url": "https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/8c30cfe4-8785-4fb1-8b38-ad570072390d/487a8045-ed6a-43af-816d-ad5700723925/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/8c30cfe4-8785-4fb1-8b38-ad570072390d/487a8045-ed6a-43af-816d-ad5700723925/podcast.rss",
       "sport": "afl"
     },
     {
-      "name": "The Front Bar",
-      "hosts": "Sam Pang, Mick Molloy, Andy Maher",
-      "url": "https://www.foxsports.com.au/podcasts/the-front-bar",
+      "name": "Dan Does Footy",
+      "hosts": "Dan Gorringe",
+      "url": "https://www.omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/2799a765-2d0d-4c71-bfbe-b11100610430/692a7f13-ed62-4422-a93c-b11100625824/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/2799a765-2d0d-4c71-bfbe-b11100610430/692a7f13-ed62-4422-a93c-b11100625824/podcast.rss",
       "sport": "afl"
     },
     {
-      "name": "On The Couch",
-      "hosts": "AFL Media panel",
-      "url": "https://podcasts.apple.com/au/podcast/on-the-couch/id1438823511",
+      "name": "The Rush Hour with JB & Billy",
+      "hosts": "James Brayshaw, Billy Brownless",
+      "url": "https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/5242a5de-77e2-435a-a29f-a4df0045cf40/78353fca-c071-44b2-b093-a4df004612c6/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/5242a5de-77e2-435a-a29f-a4df0045cf40/78353fca-c071-44b2-b093-a4df004612c6/podcast.rss",
+      "sport": "afl"
+    },
+    {
+      "name": "Fox Footy Podcasts",
+      "hosts": "Fox Footy",
+      "url": "https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/a5dd18b9-cf43-47dd-bdd0-ac84006f3968/08628667-0a62-48cd-8b08-ac84006f3972/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/a5dd18b9-cf43-47dd-bdd0-ac84006f3968/08628667-0a62-48cd-8b08-ac84006f3972/podcast.rss",
       "sport": "afl"
     },
     {
       "name": "Triple M Footy",
-      "hosts": "James Brayshaw, Mark Howard, Brian Taylor, Billy Brownless",
-      "url": "https://www.lifehackradio.com.au/podcasts/triple-m-footy",
+      "hosts": "Triple M Footy",
+      "url": "https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/d39d2ae0-a89b-428c-b6b3-a4df0050160b/afdb9862-4f27-42b1-9ed6-a4df005049c6/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/d39d2ae0-a89b-428c-b6b3-a4df0050160b/afdb9862-4f27-42b1-9ed6-a4df005049c6/podcast.rss",
       "sport": "afl"
     },
     {
-      "name": "Gettable (Trade & Draft)",
-      "hosts": "Cal Twomey, Riley Beveridge",
-      "url": "https://podcasts.apple.com/au/podcast/gettable/id1614478132",
+      "name": "3AW is Football",
+      "hosts": "3AW Football",
+      "url": "https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/15b973bf-d9d6-46d8-9892-a74200a5ed37/0ce65d68-c0d8-4027-99db-a74200a5ed37/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/15b973bf-d9d6-46d8-9892-a74200a5ed37/0ce65d68-c0d8-4027-99db-a74200a5ed37/podcast.rss",
       "sport": "afl"
     },
     {
-      "name": "PTI Australia",
-      "hosts": "Russell Barwick, Sam Kekovich",
-      "url": "https://podcasts.apple.com/au/podcast/pti-australia/id1502204896",
+      "name": "Real Footy",
+      "hosts": "The Age",
+      "url": "https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/61adb2e0-e341-4859-9832-ab8300272ff0/8ad21e4c-66ef-4a60-8991-ab8300272ff5/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/61adb2e0-e341-4859-9832-ab8300272ff0/8ad21e4c-66ef-4a60-8991-ab8300272ff5/podcast.rss",
       "sport": "afl"
     },
     {
@@ -581,7 +594,7 @@
     {
       "name": "Wisden Cricket Weekly",
       "hosts": "Mark Butcher, Yas Rana & team",
-      "url": "https://wisden.com/podcasts",
+      "url": "https://www.wisden.com/category/stories/podcast",
       "sport": "cricket"
     },
     {
@@ -768,968 +781,6 @@
       "name": "Beyond the Racing Line",
       "hosts": "Independent F1 fan panel",
       "url": "https://podcasts.apple.com/gb/podcast/beyond-the-racing-line/id1438445914",
-      "sport": "motorsport"
-    }
-  ],
-  "social": [
-    {
-      "handle": "@AFL",
-      "name": "AFL",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@afl",
-      "name": "AFL",
-      "platform": "instagram",
-      "sport": "afl"
-    },
-    {
-      "handle": "AFL",
-      "name": "AFL",
-      "platform": "facebook",
-      "sport": "afl"
-    },
-    {
-      "handle": "@FOXFOOTY",
-      "name": "Fox Footy",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@7AFL",
-      "name": "7AFL",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@aflcomau",
-      "name": "AFL.com.au",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@afl.media",
-      "name": "AFL Media",
-      "platform": "instagram",
-      "sport": "afl"
-    },
-    {
-      "handle": "@CollingwoodFC",
-      "name": "Collingwood FC",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@RichmondFC",
-      "name": "Richmond FC",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@CarltonFC",
-      "name": "Carlton FC",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@sydneyswans",
-      "name": "Sydney Swans",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@essendonfc",
-      "name": "Essendon FC",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@aflthreaders",
-      "name": "AFL Trade Whispers",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@damianbarrett",
-      "name": "Damian Barrett",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@CarolineWilson7",
-      "name": "Caroline Wilson",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@TheRoarAFL",
-      "name": "The Roar AFL",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@AFLW",
-      "name": "AFLW",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@sengoldcoast",
-      "name": "SEN",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@TripleMFooty",
-      "name": "Triple M Footy",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@BigFooty",
-      "name": "BigFooty",
-      "platform": "x",
-      "sport": "afl"
-    },
-    {
-      "handle": "@NRL",
-      "name": "NRL",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@nrl",
-      "name": "NRL",
-      "platform": "instagram",
-      "sport": "nrl"
-    },
-    {
-      "handle": "NRL",
-      "name": "NRL",
-      "platform": "facebook",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@FOXNRL",
-      "name": "Fox League",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@wwos",
-      "name": "Wide World of Sports",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@NRL360",
-      "name": "NRL 360",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@NRLPhysio",
-      "name": "NRL Physio",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@brisbanebroncos",
-      "name": "Brisbane Broncos",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@SSFCRabbitohs",
-      "name": "South Sydney Rabbitohs",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@roosters",
-      "name": "Sydney Roosters",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@storm",
-      "name": "Melbourne Storm",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@PenrithPanthers",
-      "name": "Penrith Panthers",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@NRLSupercoach",
-      "name": "NRL Supercoach",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@Vossy21",
-      "name": "Andrew Voss",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@BuzzRothfield",
-      "name": "Buzz Rothfield",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@NRLInjuryUpdate",
-      "name": "NRL Injury Update",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@TheRoar_RL",
-      "name": "The Roar Rugby League",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@NRLW",
-      "name": "NRLW",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@StateOfOrigin",
-      "name": "State of Origin",
-      "platform": "x",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@sportbible",
-      "name": "SPORTbible Rugby League",
-      "platform": "instagram",
-      "sport": "nrl"
-    },
-    {
-      "handle": "@ICC",
-      "name": "ICC",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@icc",
-      "name": "ICC",
-      "platform": "instagram",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@CricketAus",
-      "name": "Cricket Australia",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@cricketaustralia",
-      "name": "Cricket Australia",
-      "platform": "instagram",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@ESPNcricinfo",
-      "name": "ESPNcricinfo",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@BCCI",
-      "name": "BCCI",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@IPL",
-      "name": "IPL",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@englandcricket",
-      "name": "England Cricket",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@WisdenCricket",
-      "name": "Wisden",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@SkyCricket",
-      "name": "Sky Sports Cricket",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@bbctms",
-      "name": "BBC Test Match Special",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@FOXCricket",
-      "name": "Fox Cricket",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@BBL",
-      "name": "Big Bash League",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@WBBL",
-      "name": "Women’s Big Bash League",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@patcummins30",
-      "name": "Pat Cummins",
-      "platform": "instagram",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@stevesmith49",
-      "name": "Steve Smith",
-      "platform": "instagram",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@cricbuzz",
-      "name": "Cricbuzz",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@TheGradeCricketer",
-      "name": "The Grade Cricketer",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@cricketcomau",
-      "name": "Cricket.com.au",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@ashes",
-      "name": "Ashes",
-      "platform": "x",
-      "sport": "cricket"
-    },
-    {
-      "handle": "@WorldRugby",
-      "name": "World Rugby",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@worldrugby",
-      "name": "World Rugby",
-      "platform": "instagram",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@wallabies",
-      "name": "Wallabies",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@rugbyau",
-      "name": "Rugby Australia",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@SuperRugby",
-      "name": "Super Rugby Pacific",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@lionsofficial",
-      "name": "British & Irish Lions",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@SixNationsRugby",
-      "name": "Six Nations",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@RugbyPass",
-      "name": "RugbyPass",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@rugbyworldcup",
-      "name": "Rugby World Cup",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@AllBlacks",
-      "name": "All Blacks",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@EnglandRugby",
-      "name": "England Rugby",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@FOXSportsAUS",
-      "name": "Fox Sports Rugby",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@NSWWaratahs",
-      "name": "NSW Waratahs",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@Reds_Rugby",
-      "name": "Queensland Reds",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@SkySportsRugby",
-      "name": "Sky Sports Rugby Union",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@bbcrugbyunion",
-      "name": "BBC Rugby Union",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@TheRoar_RU",
-      "name": "The Roar Rugby Union",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@PlanetRugby",
-      "name": "Planet Rugby",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@guardian_rugby",
-      "name": "Guardian Rugby Union",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@ugomonye",
-      "name": "Ugo Monye",
-      "platform": "x",
-      "sport": "rugby"
-    },
-    {
-      "handle": "@FIFAcom",
-      "name": "FIFA",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@fifaworldcup",
-      "name": "FIFA World Cup",
-      "platform": "instagram",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@premierleague",
-      "name": "Premier League",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@ChampionsLeague",
-      "name": "UEFA Champions League",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@UEFA",
-      "name": "UEFA",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@LaLiga",
-      "name": "La Liga",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@SerieA_EN",
-      "name": "Serie A",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@Bundesliga_EN",
-      "name": "Bundesliga",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@ALeagues",
-      "name": "A-Leagues",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@BBCSportFootball",
-      "name": "BBC Sport Football",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@SkySportsPL",
-      "name": "Sky Sports Football",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@ESPNFC",
-      "name": "ESPN FC",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@goal",
-      "name": "Goal",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@FabrizioRomano",
-      "name": "Fabrizio Romano",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@realmadrid",
-      "name": "Real Madrid",
-      "platform": "instagram",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@fcbarcelona",
-      "name": "FC Barcelona",
-      "platform": "instagram",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@ManUtd",
-      "name": "Manchester United",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@Socceroos",
-      "name": "Socceroos",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@guardian_sport",
-      "name": "The Guardian Football",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@90min_Football",
-      "name": "90min",
-      "platform": "x",
-      "sport": "aleague"
-    },
-    {
-      "handle": "@NBA",
-      "name": "NBA",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@nba",
-      "name": "NBA",
-      "platform": "instagram",
-      "sport": "basketball"
-    },
-    {
-      "handle": "NBA",
-      "name": "NBA",
-      "platform": "facebook",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@ESPNNBA",
-      "name": "ESPN NBA",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@TheAthleticNBA",
-      "name": "The Athletic NBA",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@BleacherReport",
-      "name": "Bleacher Report",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@ShamsCharania",
-      "name": "Shams Charania",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@wojespn",
-      "name": "Adrian Wojnarowski",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@NBL",
-      "name": "NBL Australia",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@warriors",
-      "name": "Golden State Warriors",
-      "platform": "instagram",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@lakers",
-      "name": "LA Lakers",
-      "platform": "instagram",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@celtics",
-      "name": "Boston Celtics",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@NBAonTNT",
-      "name": "NBA on TNT",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@houseofhighlights",
-      "name": "House of Highlights",
-      "platform": "instagram",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@SLAMonline",
-      "name": "SLAM",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@SkySportsNBA",
-      "name": "Sky Sports NBA",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@bbcsport",
-      "name": "BBC Sport Basketball",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@hoopshype",
-      "name": "HoopsHype",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@NBACentel",
-      "name": "NBA Centel",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@WNBA",
-      "name": "WNBA",
-      "platform": "x",
-      "sport": "basketball"
-    },
-    {
-      "handle": "@NFL",
-      "name": "NFL",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@nfl",
-      "name": "NFL",
-      "platform": "instagram",
-      "sport": "nfl"
-    },
-    {
-      "handle": "NFL",
-      "name": "NFL",
-      "platform": "facebook",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@ESPNNFL",
-      "name": "ESPN NFL",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@NFLNetwork",
-      "name": "NFL Network",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@AdamSchefter",
-      "name": "Adam Schefter",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@RapSheet",
-      "name": "Ian Rapoport",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@BR_NFL",
-      "name": "Bleacher Report NFL",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@ProFootballTalk",
-      "name": "PFT",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@TheAthleticNFL",
-      "name": "The Athletic NFL",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@chiefs",
-      "name": "Kansas City Chiefs",
-      "platform": "instagram",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@dallascowboys",
-      "name": "Dallas Cowboys",
-      "platform": "instagram",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@PatMcAfeeShow",
-      "name": "Pat McAfee",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@NFLRedZone",
-      "name": "NFL RedZone",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@SkySportsNFL",
-      "name": "Sky Sports NFL",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@bbcsport",
-      "name": "BBC Sport American Football",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@NFLUK",
-      "name": "NFL UK",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@TheFFBallers",
-      "name": "Fantasy Footballers",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@SuperBowl",
-      "name": "Super Bowl",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@PFRumors",
-      "name": "Pro Football Rumors",
-      "platform": "x",
-      "sport": "nfl"
-    },
-    {
-      "handle": "@F1",
-      "name": "Formula 1",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@f1",
-      "name": "Formula 1",
-      "platform": "instagram",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "Formula 1",
-      "name": "Formula 1",
-      "platform": "facebook",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@supercars",
-      "name": "Supercars Championship",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@SkySportsF1",
-      "name": "Sky Sports F1",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@autosport",
-      "name": "Autosport",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@MotorsportCOM",
-      "name": "Motorsport.com",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@crashdotnet",
-      "name": "Crash.net",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@BBCSportF1",
-      "name": "BBC Sport F1",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@wearetherace",
-      "name": "The Race",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@scuderiaferrari",
-      "name": "Scuderia Ferrari",
-      "platform": "instagram",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@MercedesAMGF1",
-      "name": "Mercedes-AMG F1",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@redbullracing",
-      "name": "Red Bull Racing",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@McLarenF1",
-      "name": "McLaren",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@lewishamilton",
-      "name": "Lewis Hamilton",
-      "platform": "instagram",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@maxverstappen1",
-      "name": "Max Verstappen",
-      "platform": "instagram",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@F1",
-      "name": "F1 Nation",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@wtf1official",
-      "name": "WTF1",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@NASCAR",
-      "name": "NASCAR",
-      "platform": "x",
-      "sport": "motorsport"
-    },
-    {
-      "handle": "@newscomauHQ",
-      "name": "News.com.au Motorsport",
-      "platform": "x",
       "sport": "motorsport"
     }
   ],

@@ -203,22 +203,21 @@ export async function GET(request: Request) {
   }
 
   try {
-    // Fetch all sports in parallel
-    const [aflScores, soccerScores, rugbyScores, f1Scores] = await Promise.allSettled([
-      fetchAFL(),
-      fetchSoccer(188, 'A-League', 2024), // A-League ID = 188, Season 2024 works on Free plan
-      fetchRugby(),
-      fetchFormula1(),
-    ]);
-
-    const apiData: LiveScore[] = [
-      ...(aflScores.status === 'fulfilled' ? aflScores.value : []),
-      ...(soccerScores.status === 'fulfilled' ? soccerScores.value : []),
-      ...(rugbyScores.status === 'fulfilled' ? rugbyScores.value : []),
-      ...(f1Scores.status === 'fulfilled' ? f1Scores.value : []),
-      // NRL + Cricket always come from stubs
-      ...NRL_CRICKET_STUBS,
+    const scoreSources: Array<{ sport: string; fetchScores: () => Promise<LiveScore[]> }> = [
+      { sport: 'afl', fetchScores: fetchAFL },
+      { sport: 'aleague', fetchScores: () => fetchSoccer(188, 'A-League', 2024) },
+      { sport: 'rugby', fetchScores: fetchRugby },
+      { sport: 'motorsport', fetchScores: fetchFormula1 },
     ];
+    const selectedSources = sport === 'all'
+      ? scoreSources
+      : scoreSources.filter((source) => source.sport === sport);
+    const settledScores = await Promise.allSettled(selectedSources.map((source) => source.fetchScores()));
+    const fetchedScores = settledScores.flatMap((result) => (
+      result.status === 'fulfilled' ? result.value : []
+    ));
+    const stubScores = NRL_CRICKET_STUBS.filter((score) => sport === 'all' || score.sport === sport);
+    const apiData: LiveScore[] = [...fetchedScores, ...stubScores];
 
     cache = { timestamp: Date.now(), data: apiData };
 
