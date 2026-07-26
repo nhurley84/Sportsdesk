@@ -86,6 +86,7 @@ interface PodcastEpisode {
   artwork?: string; // Podcast cover art URL from RSS feed
   url: string;
   audioUrl?: string;
+  isoDate?: string;
 }
 
 interface Score {
@@ -824,7 +825,7 @@ export default function Home() {
               <div className="panel active">
                 <div className="sec-hdr">
                   <h2 className="sec-title">Sports <span className="acc" style={{ color: activeColor }}>Podcasts</span></h2>
-                  <span className="sec-count">{visiblePodcasts.length} EPISODES</span>
+                  <span className="sec-count">{visiblePodcasts.length} EPISODES (LATEST FIRST)</span>
                 </div>
 
                 {loading.podcasts ? (
@@ -834,53 +835,62 @@ export default function Home() {
                 ) : (
                   <>
                     <div className="pod-grid">
-                      {visiblePodcasts.slice(0, visibleCount).map((pod) => (
-                        <a
-                          key={pod.id}
-                          className="pod-card"
-                          href={pod.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
-                        >
-                          <div className="pod-art">
-                            {pod.artwork ? (
-                              <img
-                                src={pod.artwork}
-                                alt={pod.title}
-                                loading="lazy"
-                                decoding="async"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                onError={(e) => {
-                                  e.currentTarget.style.display = 'none';
-                                  const parent = e.currentTarget.parentElement;
-                                  if (parent) {
-                                    const span = document.createElement('span');
-                                    span.textContent = pod.ico;
-                                    parent.appendChild(span);
-                                  }
-                                }}
-                              />
-                            ) : pod.ico.startsWith('http') || pod.ico.startsWith('/') ? (
-                              <img src={pod.ico} alt={pod.title} loading="lazy" decoding="async" />
-                            ) : (
-                              pod.ico
-                            )}
-                            <div className="pod-play-over">
-                              <span>▶</span>
+                      {visiblePodcasts.slice(0, visibleCount).map((pod) => {
+                        const dateFormatted = pod.isoDate
+                          ? new Date(pod.isoDate).toLocaleDateString('en-AU', {
+                              day: 'numeric',
+                              month: 'short',
+                              year: 'numeric',
+                            })
+                          : null;
+
+                        return (
+                          <a
+                            key={pod.id}
+                            className="pod-card"
+                            href={pod.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                          >
+                            <div className="pod-art">
+                              {pod.artwork ? (
+                                <img
+                                  src={pod.artwork}
+                                  alt={pod.title}
+                                  loading="lazy"
+                                  decoding="async"
+                                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                  onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    const parent = e.currentTarget.parentElement;
+                                    if (parent) {
+                                      const span = document.createElement('span');
+                                      span.textContent = pod.ico;
+                                      parent.appendChild(span);
+                                    }
+                                  }}
+                                />
+                              ) : pod.ico.startsWith('http') || pod.ico.startsWith('/') ? (
+                                <img src={pod.ico} alt={pod.title} loading="lazy" decoding="async" />
+                              ) : (
+                                pod.ico
+                              )}
+                              <div className="pod-play-over">
+                                <span>▶</span>
+                              </div>
                             </div>
-                          </div>
-                          <div className="pod-body">
-                            <div className="pod-sport-tag">{pod.sport}</div>
-                            <h3 className="pod-title">{pod.title}</h3>
-                            <p className="pod-ep">{pod.ep}</p>
-                            <div className="pod-meta">
-                              <span className="pod-dur">{pod.dur}</span>
-                              {pod.trending && <span className="pod-trending">TRENDING</span>}
+                            <div className="pod-body">
+                              <div className="pod-sport-tag">{pod.sport}</div>
+                              <h3 className="pod-title">{pod.title}</h3>
+                              <div className="pod-meta">
+                                {dateFormatted && <span className="pod-dur">{dateFormatted}</span>}
+                                <span className="pod-dur">{pod.dur}</span>
+                              </div>
                             </div>
-                          </div>
-                        </a>
-                      ))}
+                          </a>
+                        );
+                      })}
                     </div>
                     {visibleCount < visiblePodcasts.length && (
                       <div className="load-more">

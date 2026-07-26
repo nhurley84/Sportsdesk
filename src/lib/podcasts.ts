@@ -48,6 +48,9 @@ export interface PodcastEpisode {
   artwork?: string;
   url: string;
   audioUrl?: string;
+  pubDate?: string;
+  isoDate?: string;
+  dateAgo?: string;
 }
 
 const SPORT_EMOJIS: Record<string, string> = {
@@ -356,6 +359,10 @@ async function fetchPodcastFeed(source: FeedMappedPodcast): Promise<PodcastEpiso
       );
       const episodeSeed = episode.guid || episode.link || `${title}-${episode.title || index}`;
 
+      const rawPubDate = episode.pubDate || episode.isoDate;
+      const parsedDate = rawPubDate ? new Date(rawPubDate) : undefined;
+      const validDate = parsedDate && !isNaN(parsedDate.getTime()) ? parsedDate : undefined;
+
       return {
         id: `${source.sport}-${slugify(title)}-${slugify(String(episodeSeed))}`,
         sport: source.sport,
@@ -368,19 +375,21 @@ async function fetchPodcastFeed(source: FeedMappedPodcast): Promise<PodcastEpiso
         artwork,
         url: episodeLink,
         audioUrl: episode.enclosure?.url,
+        pubDate: validDate ? validDate.toUTCString() : undefined,
+        isoDate: validDate ? validDate.toISOString() : undefined,
       };
     });
 
     const hasSharedDestination = mappedEpisodes.length > 1
       && new Set(mappedEpisodes.map((episode) => episode.url)).size === 1;
 
-    if (!hasSharedDestination) {
-      return mappedEpisodes;
-    }
+    const finalizedEpisodes = !hasSharedDestination
+      ? mappedEpisodes
+      : mappedEpisodes.map((episode) => (
+          episode.audioUrl ? { ...episode, url: episode.audioUrl } : episode
+        ));
 
-    return mappedEpisodes.map((episode) => (
-      episode.audioUrl ? { ...episode, url: episode.audioUrl } : episode
-    ));
+    return finalizedEpisodes;
   } catch {
     return [];
   }
@@ -402,9 +411,16 @@ export async function fetchPodcasts(sport = 'all'): Promise<PodcastEpisode[]> {
 
   const sources = getPodcastSources(sport);
   const settled = await Promise.allSettled(sources.map(fetchPodcastFeed));
-  const results = settled.flatMap((result) => (
+  const rawResults = settled.flatMap((result) => (
     result.status === 'fulfilled' ? result.value : []
   ));
+
+  // Sort podcasts strictly by date (newest first)
+  const results = rawResults.sort((a, b) => {
+    const timeA = a.isoDate ? new Date(a.isoDate).getTime() : 0;
+    const timeB = b.isoDate ? new Date(b.isoDate).getTime() : 0;
+    return timeB - timeA;
+  });
 
   cache.set(cacheKey, {
     timestamp: now,
