@@ -360,12 +360,11 @@ export default function Home() {
     return articles.filter(a => {
       const text = `${a.headline} ${a.snippet}`.toLowerCase();
       return followedTeams.some(teamId => {
-        const team = TEAMS.find(t => t.id === teamId);
-        if (!team) return false;
-        // Check matching name/slug
-        const namePart = team.name.split(' ').map(n => n.toLowerCase());
-        return namePart.some(part => part.length > 3 && text.includes(part));
-      });
+      const team = TEAMS.find(t => t.id === teamId);
+      if (!team) return false;
+      const terms = (team as any).searchTerms || team.name.split(' ').map((n: string) => n.toLowerCase()).filter((p: string)      => p.length > 3);
+  return terms.some((term: string) => text.includes(term.toLowerCase()));
+});
     });
   }, [articles, followedTeams]);
 
