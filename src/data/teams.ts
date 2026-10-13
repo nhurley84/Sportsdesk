@@ -13,6 +13,18 @@ export const TEAMS: Team[] = [
   { id: 'geelong', name: 'Geelong Cats', sport: 'afl' },
   { id: 'hawthorn', name: 'Hawthorn Hawks', sport: 'afl' },
   { id: 'sydney-swans', name: 'Sydney Swans', sport: 'afl' },
+  { id: 'fremantle', name: 'Fremantle Dockers', sport: 'afl' },
+  { id: 'Brisbane', name: 'Brisbane Lions', sport: 'afl' },
+  { id: 'GWS', name: 'GWS Giants', sport: 'afl' },
+  { id: 'Adelaide', name: 'Adelaide Crows', sport: 'afl' },
+  { id: 'Port Adelaide', name: 'Port Adelaide Power', sport: 'afl' },
+  { id: 'Melbourne', name: 'Melbourne Demons', sport: 'afl' },
+  { id: 'Western Bulldogs', name: 'Western Bulldogs', sport: 'afl' },
+  { id: 'St Kilda', name: 'St Kilda Saints', sport: 'afl' },
+  { id: 'Gold Coast', name: 'Gold Coast Suns', sport: 'afl' },
+  { id: 'West Coast', name: 'West Coast Eagles', sport: 'afl' },
+  { id: 'North Melbourne', name: 'North Melbourne Kangaroos', sport: 'afl' },
+
   
   // NRL
   { id: 'broncos', name: 'Brisbane Broncos', sport: 'nrl' },
