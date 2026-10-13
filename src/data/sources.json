@@ -570,7 +570,8 @@
     {
       "name": "The Final Word Cricket Podcast",
       "hosts": "Geoff Lemon, Adam Collins",
-      "url": "https://www.thefinalword.com.au",
+      "url": "https://finalwordcricket.com",
+      "rss": "https://feeds.megaphone.fm/COMG4127829564",
       "sport": "cricket"
     },
     {
