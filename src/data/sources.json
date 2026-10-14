@@ -535,44 +535,51 @@
   "name": "NRL 360",
   "hosts": "Paul Gallen, Braith Anasta, Petero Civoniceva",
   "url": "https://www.fox.com.au/sport/nrl",
-  "rss": "https://omnycontent.com/d/playlist/2fb3740d-1b49-4bca-8670-a84800139d07/4a3c7e57-59d8-4b6c-a5c3-a84800139d44/4a7a9e34-4dd9-454c-a7ad-a84800139d5e/podcast.rss",
+  "rss": "https://omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/54e30b5c-13b5-4c51-8a65-ac84006f3b30/c8ff9274-6646-4ba1-ac8a-ac84006f3b39/podcast.rss",
   "sport": "nrl"
-   },
-   {
+},
+{
   "name": "Triple M Rocks Footy NRL",
   "hosts": "Triple M NRL",
   "url": "https://www.triplem.com.au/sport/nrl",
-  "rss": "https://omnycontent.com/d/playlist/566281f8-5fef-48de-9b1a-ae3200044982/83c21d2f-47e2-477c-b6db-ae3200044ebe/67f97b9a-c0e5-4c2c-bd67-ae3200044ecf/podcast.rss",
+  "rss": "https://omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/bcf86a68-ce97-47af-8c23-a4df004cd80e/19c36f6f-691b-4087-ad03-a4df004d028b/podcast.rss",
   "sport": "nrl"
-   },
-   {
+},
+{
   "name": "Levels with Willie Mason & Justin Horo",
   "hosts": "Willie Mason, Justin Horo",
   "url": "https://omnycontent.com",
-  "rss": "https://omnycontent.com/d/playlist/d3d56d8d-8d74-4e9b-89b4-af890104ef44/8c6b94e8-dc93-48e3-8f09-af8901083fa5/94cf1af2-7f7d-4f29-b78e-af8901083fc9/podcast.rss",
+  "rss": "https://omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/6690cbd9-7cf2-4c9b-8d4e-afb100491700/c66bfea0-0e98-4f6d-b3a7-afb10049e162/podcast.rss",
   "sport": "nrl"
-   },
-   {
-  "name": "Backstage with Cooper Cronk & Matty Johns",
+},
+{
+  "name": "Backstage with Cooper & Matty Johns",
   "hosts": "Cooper Cronk, Matty Johns",
   "url": "https://omnycontent.com",
-  "rss": "https://omnycontent.com/d/playlist/2fb3740d-1b49-4bca-8670-a84800139d07/4a3c7e57-59d8-4b6c-a5c3-a84800139d44/4a7a9e34-4dd9-454c-a7ad-a84800139d5e/podcast.rss",
+  "rss": "https://omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/54e30b5c-13b5-4c51-8a65-ac84006f3b30/c8ff9274-6646-4ba1-ac8a-ac84006f3b39/podcast.rss",
   "sport": "nrl"
-   },
-   {
+},
+{
   "name": "The Bye Round with James Graham",
   "hosts": "James Graham",
   "url": "https://omnycontent.com",
-  "rss": "https://omnycontent.com/d/playlist/87bedc22-5029-4b42-8983-a9300180c7da/4d5e7139-a9af-4ec9-9ef9-a93001914a40/4f5c6b8a-1a38-4e62-b1af-a93001914a5e/podcast.rss",
+  "rss": "https://omnycontent.com/d/playlist/87bedc22-37de-4b24-aca3-aea5002a4362/536befe3-d14f-418c-96e2-aea5002a4de4/e0f66187-0d04-4027-bfeb-aea5002b1a60/podcast.rss",
   "sport": "nrl"
-   },
-   {
+},
+{
   "name": "Six Tackles with Gus",
   "hosts": "Phil Gould",
   "url": "https://omnycontent.com",
-  "rss": "https://omnycontent.com/d/playlist/88b564ea-0db8-4f28-a9b5-aba200007960/f7295e8a-ab98-416c-9cfe-aba200007b5a/a2bf25e7-7dc5-4cce-bcbb-aba200007b84/podcast.rss",
+  "rss": "https://omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/b6397ef8-3cfd-4cda-87b2-ab8300555d65/c57bd323-6c95-4371-9571-ab8300555d6a/podcast.rss",
   "sport": "nrl"
-    },
+},
+{
+  "name": "Matty and Cronk",
+  "hosts": "Matty Johns, Cooper Cronk",
+  "url": "https://omnycontent.com",
+  "rss": "https://omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/10c4a2d2-5fcf-4695-8da4-ac2a00524d6b/37490026-349b-4102-8c4e-ac2a00524d6b/podcast.rss",
+  "sport": "nrl"
+}
     {
       "name": "The Final Word Cricket Podcast",
       "hosts": "Geoff Lemon, Adam Collins",
