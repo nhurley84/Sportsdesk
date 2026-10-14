@@ -1,4 +1,4 @@
-eexport interface Team {
+export interface Team {
   id: string;
   name: string;
   sport: string;
@@ -17,8 +17,7 @@ export const TEAMS: Team[] = [
   { id: 'fremantle', name: 'Fremantle Dockers', sport: 'afl' },
   { id: 'Brisbane', name: 'Brisbane Lions', sport: 'afl' },
   { id: 'GWS', name: 'GWS Giants', sport: 'afl', searchTerms: ['GWS', 'Greater Western Sydney Giants'] },
-  { id: 'Adelaide', name: 'Adelaide Crows', sport: 'afl', searchTerms: ['Adelaide Crows'] },
-  { id: 'Port Adelaide', name: 'Port Adelaide Power', sport: 'afl' },
+  { id: 'Adelaide', name: 'Adelaide Crows', sport: 'afl', searchTerms: ['Adelaide Crows'] },  { id: 'Port Adelaide', name: 'Port Adelaide Power', sport: 'afl' },
   { id: 'Melbourne', name: 'Melbourne Demons', sport: 'afl' },
   { id: 'Western Bulldogs', name: 'Western Bulldogs', sport: 'afl' },
   { id: 'St Kilda', name: 'St Kilda Saints', sport: 'afl' },
