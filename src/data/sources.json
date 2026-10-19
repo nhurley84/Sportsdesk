@@ -581,42 +581,54 @@
   "sport": "nrl"
 },
     {
-      "name": "The Final Word Cricket Podcast",
-      "hosts": "Geoff Lemon, Adam Collins",
-      "url": "https://finalwordcricket.com",
-      "rss": "https://feeds.megaphone.fm/COMG4127829564",
+      "name": "The Unplayable",
+      "hosts": "",
+      "url": "https://omnycontent.com",
+      "rss": "https://omnycontent.com/d/playlist/fa326977-3de5-4283-9b8b-af3500c58607/cef5846a-91d6-43fd-90e5-b3920031c00c/7e7b3745-0957-478b-97b1-b3920031c013/podcast.rss",
       "sport": "cricket"
     },
     {
       "name": "Cricket Unfiltered",
       "hosts": "Andrew Menczel & guests",
-      "url": "https://podcasts.apple.com/au/podcast/cricket-unfiltered/id1077580976",
+      "url": "https://feeds.megaphone.fm",
+      "rss": "https://feeds.megaphone.fm/COMG4173210327",
       "sport": "cricket"
     },
     {
-      "name": "Test Match Special",
-      "hosts": "BBC Radio 5 Live team",
-      "url": "https://www.bbc.co.uk/programmes/p002vsn3",
+      "name": "The Surge",
+      "hosts": "",
+      "url": "https://omnycontent.com",
+      "rss": "https://omnycontent.com/d/playlist/fa326977-3de5-4283-9b8b-af3500c58607/c27d5412-538a-422a-95ee-b3920032d256/8ea213a4-a772-4f82-a246-b3920032d26a/podcast.rss",
       "sport": "cricket"
     },
     {
       "name": "The Grade Cricketer",
       "hosts": "Sam Perry, Ian Higgins",
-      "url": "https://podcasts.apple.com/au/podcast/the-grade-cricketer/id1042947524",
+      "url": "https://omnycontent.com",
+      "rss": "https://omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/f9ddc13f-8a37-4937-81c7-b081006fa5c2/ebea9171-5a2f-4a13-96e0-b081006fa5e8/podcast.rss",
       "sport": "cricket"
     },
     {
-      "name": "Wisden Cricket Weekly",
-      "hosts": "Mark Butcher, Yas Rana & team",
-      "url": "https://www.wisden.com/category/stories/podcast",
+      "name": "ABC Cricket",
+      "hosts": "ABC Sport",
+      "url": "https://www.abc.net.au/sport/cricket",
+      "rss": "https://abc.net.au/feeds/13653330/podcast.xml",
       "sport": "cricket"
     },
     {
-      "name": "ESPNcricinfo — The Switch Hit",
-      "hosts": "Mark Butcher, Matt Roller, Alan Gardner & team",
-      "url": "https://www.espncricinfo.com/podcasts",
+      "name": "Willow Talk",
+      "hosts": "",
+      "url": "https://omnycontent.com",
+      "rss": "https://omnycontent.com/d/playlist/fa326977-3de5-4283-9b8b-af3500c58607/c27d5412-538a-422a-95ee-b3920032d256/8ea213a4-a772-4f82-a246-b3920032d26a/podcast.rss",
       "sport": "cricket"
     },
+    {
+      "name": "The Scoop",
+      "hosts": "",
+      "url": "https://omnycontent.com",
+      "rss": "https://omnycontent.com/d/playlist/fa326977-3de5-4283-9b8b-af3500c58607/c9e58c9d-9254-4c2f-b4bf-b392003125ff/f66a78fc-5fef-4320-83a5-b39200312609/podcast.rss",
+      "sport": "cricket"
+},
     {
       "name": "RugbyPass Offload",
       "hosts": "Marc Edwards, Ryan Wilson, Max Lahiff & guests",
