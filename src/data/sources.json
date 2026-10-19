@@ -629,42 +629,62 @@
       "rss": "https://omnycontent.com/d/playlist/fa326977-3de5-4283-9b8b-af3500c58607/c9e58c9d-9254-4c2f-b4bf-b392003125ff/f66a78fc-5fef-4320-83a5-b39200312609/podcast.rss",
       "sport": "cricket"
 },
-    {
-      "name": "RugbyPass Offload",
-      "hosts": "Marc Edwards, Ryan Wilson, Max Lahiff & guests",
-      "url": "https://www.rugbypass.com/podcasts/",
-      "sport": "rugby"
-    },
-    {
-      "name": "Whistle Watch",
-      "hosts": "Nigel Owens, Ugo Monye",
-      "url": "https://www.rugbypass.com/podcasts/",
-      "sport": "rugby"
-    },
-    {
-      "name": "Rugby Union Weekly (BBC)",
-      "hosts": "Ugo Monye, Chris Jones, Danny Care",
-      "url": "https://www.bbc.co.uk/programmes/p002vsnk",
-      "sport": "rugby"
-    },
-    {
-      "name": "Eggchasers Podcast",
-      "hosts": "Tim Cocker, Jonathan Beardmore, Phil Largan",
-      "url": "https://podcasts.apple.com/gb/podcast/the-eggchasers-rugby-podcast/id1112748549",
-      "sport": "rugby"
-    },
-    {
-      "name": "Give ’em Rugby",
-      "hosts": "Liam McGrath & guests",
-      "url": "https://podcasts.apple.com/au/podcast/give-em-rugby/id1500549477",
-      "sport": "rugby"
-    },
-    {
-      "name": "Two Aussies and a Kiwi (The Roar)",
-      "hosts": "The Roar Rugby panel",
-      "url": "https://www.theroar.com.au/rugby-union/feed/",
-      "sport": "rugby"
-    },
+{
+  "name": "Kick Offs & Kick Ons",
+  "hosts": "",
+  "url": "https://feeds.acast.com/public/shows/kick-offs-and-kick-ons",
+  "rss": "https://feeds.acast.com/public/shows/kick-offs-and-kick-ons",
+  "sport": "rugby"
+},
+{
+  "name": "The Good, The Bad, The Rugby Au",
+  "hosts": "",
+  "url": "https://feeds.megaphone.fm/GLT9898976502",
+  "rss": "https://feeds.megaphone.fm/GLT9898976502",
+  "sport": "rugby"
+},
+{
+  "name": "The Roar Rugby Podcast",
+  "hosts": "",
+  "url": "https://www.theroar.com.au",
+  "rss": "https://feeds.acast.com/public/shows/the-roar-rugby-podcast",
+  "sport": "rugby"
+},
+{
+  "name": "The Inside Line",
+  "hosts": "",
+  "url": "https://omnycontent.com",
+  "rss": "https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/fac92ff0-f315-415d-a38f-b075004b126e/446899f5-5e92-4659-aecb-b075004da5c9/podcast.rss",
+  "sport": "rugby"
+},
+{
+  "name": "Fox Rugby",
+  "hosts": "",
+  "url": "https://www.foxsports.com.au/rugby",
+  "rss": "https://omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3a3857ad-0f6b-4d02-9b4d-ac84006f39cb/1cc543a6-1c10-4d04-9de4-ac84006f39d4/podcast.rss",
+  "sport": "rugby"
+},
+{
+  "name": "Scrumbags",
+  "hosts": "",
+  "url": "https://feeds.acast.com/public/shows/scrumbagsrugbypodcast",
+  "rss": "https://feeds.acast.com/public/shows/scrumbagsrugbypodcast",
+  "sport": "rugby"
+},
+{
+  "name": "Rugby Unity",
+  "hosts": "",
+  "url": "https://feeds.acast.com/public/shows/contentrfc",
+  "rss": "https://feeds.acast.com/public/shows/contentrfc",
+  "sport": "rugby"
+},
+{
+  "name": "Between Two Posts",
+  "hosts": "",
+  "url": "https://omny.fm/shows/between-two-posts-1",
+  "rss": "https://omny.fm/shows/between-two-posts-1/playlists/podcast",
+  "sport": "rugby"
+},
     {
       "name": "Football Weekly (The Guardian)",
       "hosts": "Max Rushden, Barry Glendenning & guests",
