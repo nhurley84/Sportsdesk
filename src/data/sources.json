@@ -685,43 +685,49 @@
   "rss": "https://omny.fm/shows/between-two-posts-1/playlists/podcast",
   "sport": "rugby"
 },
-    {
-      "name": "Football Weekly (The Guardian)",
-      "hosts": "Max Rushden, Barry Glendenning & guests",
-      "url": "https://www.theguardian.com/football/series/footballweekly",
-      "sport": "aleague"
+{
+  "name": "Football Weekly (The Guardian)",
+  "hosts": "Max Rushden",
+  "url": "https://www.theguardian.com/football/series/footballweekly",
+  "rss": "https://www.theguardian.com/football/series/footballweekly/podcast.xml",
+  "sport": "football"
+},
+{
+  "name": "Football Daily",
+  "hosts": "BBC Sport",
+  "url": "https://www.bbc.co.uk/sport/football",
+  "rss": "https://podcasts.files.bbci.co.uk/p02nrsln.rss",
+  "sport": "football"
+},
+{
+  "name": "The Grandstand Football Podcast",
+  "hosts": "ABC Sport",
+  "url": "https://www.abc.net.au/sport/football",
+  "rss": "https://www.abc.net.au/feeds/10392176/podcast.xml",
+  "sport": "football"
+},
+{
+  "name": "Round Ball Australia",
+  "hosts": "",
+  "url": "https://anchor.fm/s/eb0beaf0/podcast/rss",
+  "rss": "https://anchor.fm/s/eb0beaf0/podcast/rss",
+  "sport": "football"
+},
+{
+  "name": "Box2Box",
+  "hosts": "",
+  "url": "https://omnycontent.com",
+  "rss": "https://www.omnycontent.com/d/playlist/1c749076-4081-4b90-a912-ada6003497c3/df187de4-ed81-43e4-a3b4-adab01620c16/b307f7d9-c4af-4b60-9310-adab01620c20/podcast.rss",
+  "sport": "football"
+},
+{
+  "name": "A-League Off Air",
+  "hosts": "",
+  "url": "https://www.buzzsprout.com/2309025",
+  "rss": "https://rss.buzzsprout.com/2309025.rss",
+  "sport": "football"
+}
     },
-    {
-      "name": "The Totally Football Show",
-      "hosts": "James Richardson & team",
-      "url": "https://podcasts.apple.com/gb/podcast/the-totally-football-show-with-james-richardson/id1042726898",
-      "sport": "aleague"
-    },
-    {
-      "name": "Football Ramble",
-      "hosts": "Football Ramble team",
-      "url": "https://podcasts.apple.com/gb/podcast/the-football-ramble/id257430090",
-      "sport": "aleague"
-    },
-    {
-      "name": "The 2 Robbies",
-      "hosts": "Robbie Mustoe, Robbie Earle",
-      "url": "https://www.nbcsports.com/soccer/the-2-robbies-podcast",
-      "sport": "aleague"
-    },
-    {
-      "name": "Men in Blazers",
-      "hosts": "Roger Bennett, Michael Davies",
-      "url": "https://podcasts.apple.com/us/podcast/men-in-blazers/id520604011",
-      "sport": "aleague"
-    },
-    {
-      "name": "Keep Up (A-League)",
-      "hosts": "Keep Up panel (Official A-League)",
-      "url": "https://www.keepup.com.au",
-      "sport": "aleague"
-    },
-    {
       "name": "The Zach Lowe Show",
       "hosts": "Zach Lowe",
       "url": "https://podcasts.apple.com/us/podcast/the-zach-lowe-show/id1805478723",
