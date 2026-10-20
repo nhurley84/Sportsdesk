@@ -115,7 +115,7 @@ const SPORTS = [
   { id: 'afl', name: 'AFL', ico: '🏈' },
   { id: 'nrl', name: 'NRL', ico: '🏉' },
   { id: 'cricket', name: 'Cricket', ico: '🏏' },
-  { id: 'aleague', name: 'Soccer', ico: '⚽' },
+  { id: 'football', name: 'Soccer', ico: '⚽' },
   { id: 'rugby', name: 'Rugby Union', ico: '🏉' },
   { id: 'basketball', name: 'Basketball', ico: '🏀' },
   { id: 'nfl', name: 'NFL', ico: '🏈' },
