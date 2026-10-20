@@ -720,47 +720,60 @@
   "rss": "https://www.omnycontent.com/d/playlist/1c749076-4081-4b90-a912-ada6003497c3/df187de4-ed81-43e4-a3b4-adab01620c16/b307f7d9-c4af-4b60-9310-adab01620c20/podcast.rss",
   "sport": "football"
 },
-{
+    {
       "name": "A-League Off Air",
       "hosts": "",
       "url": "https://www.buzzsprout.com/2309025",
       "rss": "https://rss.buzzsprout.com/2309025.rss",
       "sport": "football"
     },
-}
+    {
       "name": "The Zach Lowe Show",
       "hosts": "Zach Lowe",
-      "url": "https://podcasts.apple.com/us/podcast/the-zach-lowe-show/id1805478723",
+      "url": "https://feeds.megaphone.fm/zach-lowe",
+      "rss": "https://feeds.megaphone.fm/zach-lowe",
       "sport": "basketball"
     },
     {
       "name": "The Ringer NBA Show",
-      "hosts": "Justin Verrier, Rob Mahoney, Logan Murdock & team",
-      "url": "https://podcasts.apple.com/us/podcast/the-ringer-nba-show/id1346254922",
+      "hosts": "",
+      "url": "https://feeds.megaphone.fm/the-ringer-nba-show",
+      "rss": "https://feeds.megaphone.fm/the-ringer-nba-show",
       "sport": "basketball"
     },
     {
-      "name": "NBA Today",
-      "hosts": "Malika Andrews, Vince Carter, Chiney Ogwumike, Kendrick Perkins",
-      "url": "https://podcasts.apple.com/us/podcast/nba-today/id1106826486",
+      "name": "The Lowe Post",
+      "hosts": "Zach Lowe",
+      "url": "https://feeds.megaphone.fm/ESP3625084333",
+      "rss": "https://feeds.megaphone.fm/ESP3625084333",
       "sport": "basketball"
     },
     {
-      "name": "The Woj Pod",
-      "hosts": "Adrian Wojnarowski",
-      "url": "https://podcasts.apple.com/us/podcast/the-woj-pod/id1500193301",
+      "name": "The Bill Simmons Podcast",
+      "hosts": "Bill Simmons",
+      "url": "https://feeds.megaphone.fm/the-bill-simmons-podcast",
+      "rss": "https://feeds.megaphone.fm/the-bill-simmons-podcast",
       "sport": "basketball"
     },
     {
-      "name": "Dunc'd On Basketball",
-      "hosts": "Nate Duncan, Danny Leroux",
-      "url": "https://podcasts.apple.com/us/podcast/duncd-on-basketball-nba-podcast/id573879717",
+      "name": "Straight Shooters",
+      "hosts": "",
+      "url": "https://feeds.megaphone.fm/NTETP7615556024",
+      "rss": "https://feeds.megaphone.fm/NTETP7615556024",
       "sport": "basketball"
     },
     {
       "name": "No Dunks",
-      "hosts": "Skeets, Tas, Trey, JD",
-      "url": "https://podcasts.apple.com/us/podcast/no-dunks/id1612729214",
+      "hosts": "",
+      "url": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/170a762b-6e4b-4cb5-a181-b36a00f64617/64cb7714-6ad9-4029-887f-b36a00f64628/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/170a762b-6e4b-4cb5-a181-b36a00f64617/64cb7714-6ad9-4029-887f-b36a00f64628/podcast.rss",
+      "sport": "basketball"
+    },
+    {
+      "name": "Aussie Hoopla",
+      "hosts": "",
+      "url": "https://rss.libsyn.com/shows/70605/destinations/297503.xml",
+      "rss": "https://rss.libsyn.com/shows/70605/destinations/297503.xml",
       "sport": "basketball"
     },
     {
