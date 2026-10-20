@@ -879,14 +879,15 @@ export default function Home() {
                                 <span>▶</span>
                               </div>
                             </div>
-                            <div className="pod-body">
-                              <div className="pod-sport-tag">{pod.sport}</div>
-                              <h3 className="pod-title">{pod.title}</h3>
-                              <div className="pod-meta">
-                                {dateFormatted && <span className="pod-dur">{dateFormatted}</span>}
-                                <span className="pod-dur">{pod.dur}</span>
-                              </div>
-                            </div>
+<div className="pod-body">
+  <div className="pod-sport-tag">{pod.sport}</div>
+  <h3 className="pod-title">{pod.title}</h3>
+  {pod.ep && <p className="pod-ep-title">{pod.ep}</p>}
+  <div className="pod-meta">
+    {dateFormatted && <span className="pod-dur">{dateFormatted}</span>}
+    <span className="pod-dur">{pod.dur}</span>
+  </div>
+</div>
                           </a>
                         );
                       })}
