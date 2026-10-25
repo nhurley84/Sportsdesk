@@ -763,13 +763,19 @@ useEffect(() => {
 
             {/* ── VIDEO HIGHLIGHTS TAB ── */}
             {activeTab === 'video' && (
-              <div className="panel active">
-                <div className="sec-hdr">
-                  <h2 className="sec-title">Video <span className="acc" style={{ color: activeColor }}>Highlights</span></h2>
-                  <span className="sec-count">{filteredVideos.length} VIDEOS</span>
-                </div>
+  <div className="panel active">
+    <div className="sec-hdr">
+      <h2 className="sec-title">Video <span className="acc" style={{ color: activeColor }}>Highlights</span></h2>
+      <span className="sec-count">{filteredVideos.length} VIDEOS</span>
+    </div>
 
-                {loading.videos ? (
+    {filteredVideos.length === 0 && !loading.videos && (
+      <div style={{ textAlign: 'center', padding: '40px' }}>
+        <button className="btn-solid" onClick={() => fetchVideosData(activeSport)}>Load Videos</button>
+      </div>
+    )}
+
+    {loading.videos ? (
                   <div style={{ textAlign: 'center', padding: '40px', color: 'var(--muted)', fontFamily: 'var(--font-oswald)' }}>
                     ⚡ LOADING HIGHLIGHTS...
                   </div>
