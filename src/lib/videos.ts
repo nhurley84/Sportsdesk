@@ -12,7 +12,7 @@ const parser = new Parser({
 
 // Map of sport -> array of YouTube Channel IDs
 const CHANNELS: Record<string, string[]> = {
-  basketball: ['UCWJ2lWNubArHWmf3FIHbfcQ', 'UCqQo7ewe87aYAe7ub5UqXMw'], // NBA, House of Highlights
+  basketball: ['UCWJ2lWNubArHWmf3FIHbfcQ', 'UCqQo7ewe87aYAe7ub5UqXMw'], // NBA
   nfl: ['UCDVYQ4Zhbm3S2dlz7P1GBDg'], // NFL
   motorsport: [
     'UC0R3-zRpeIVUnavcRTPWzZA', // F1
@@ -29,11 +29,11 @@ const CHANNELS: Record<string, string[]> = {
     'UC0oyi_CF3v9fsKmBM2m6wPA'  // IPL
   ],
   rugby: ['UCpcoA5dGkZq5I5c2WOfaY4w', 'UCL8qB-RInEa40BvN3VpE_eQ'], // World Rugby, RugbyPass (approx)
-  aleague: ['UCDU2T3RjF7L961aQvG-P3TQ'] // A-Leagues (approx)
+  football: ['UCDU2T3RjF7L961aQvG-P3TQ'] // A-Leagues (approx)
 };
 
 const ICOS: Record<string, string> = {
-  nba: '🏀', nfl: '🏈', motorsport: '🏎️', afl: '🏈', nrl: '🏉', cricket: '🏏', rugby: '🏉', aleague: '⚽'
+  nba: '🏀', nfl: '🏈', motorsport: '🏎️', afl: '🏈', nrl: '🏉', cricket: '🏏', rugby: '🏉', football: '⚽'
 };
 
 interface Video {
