@@ -266,24 +266,20 @@ export default function Home() {
   };
 
   const fetchVideosData = async (sport: string) => {
-    const requestId = videoRequestRef.current + 1;
-    videoRequestRef.current = requestId;
-    setLoading(prev => ({ ...prev, videos: true }));
-    try {
-      const res = await fetch(`/api/videos?sport=${encodeURIComponent(sport)}`);
-      if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-      const data = await res.json();
-      if (videoRequestRef.current === requestId && data.success) {
-        setVideos(data.videos);
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      if (videoRequestRef.current === requestId) {
-        setLoading(prev => ({ ...prev, videos: false }));
-      }
+  setLoading(prev => ({ ...prev, videos: true }));
+  try {
+    const res = await fetch(`/api/videos?sport=${encodeURIComponent(sport)}`);
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const data = await res.json();
+    if (data.success) {
+      setVideos(data.videos);
     }
-  };
+  } catch (e) {
+    console.error(e);
+  } finally {
+    setLoading(prev => ({ ...prev, videos: false }));
+  }
+};
 
   const fetchScores = async () => {
     setLoading(prev => ({ ...prev, scores: true }));
