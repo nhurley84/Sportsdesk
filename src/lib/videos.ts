@@ -29,7 +29,7 @@ const CHANNELS: Record<string, string[]> = {
     'UC0oyi_CF3v9fsKmBM2m6wPA'  // IPL
   ],
   rugby: ['UCpcoA5dGkZq5I5c2WOfaY4w', 'UCL8qB-RInEa40BvN3VpE_eQ'], // World Rugby, RugbyPass (approx)
-  football: ['UCDU2T3RjF7L961aQvG-P3TQ'] // A-Leagues (approx)
+  football: ['UCqZQlzSHbVJrwrn5XvzrzcA', 'UCnfC0AMjIVIkWCFh5HDa4gA', 'UC8Ll1fxBDdGM8NiZPSn3hcQ'], // Premier League, FIFA, UEFA CL
 };
 
 const ICOS: Record<string, string> = {
