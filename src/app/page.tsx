@@ -189,12 +189,16 @@ export default function Home() {
 
   // Heavy secondary feeds load only when their view is requested.
   useEffect(() => {
-    if (activeTab === 'podcasts') {
-      fetchPodcastsData(activeSport);
-    } else if (activeTab === 'video') {
-      fetchVideosData(activeSport);
-    }
-  }, [activeSport, activeTab]);
+  if (activeTab === 'podcasts') {
+    fetchPodcastsData(activeSport);
+  }
+}, [activeSport, activeTab]);
+
+useEffect(() => {
+  if (activeTab === 'video') {
+    fetchVideosData(activeSport);
+  }
+}, [activeTab]);
 
   // Reset pagination when switching tabs
   useEffect(() => {
