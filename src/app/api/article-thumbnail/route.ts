@@ -4,7 +4,7 @@ import sourcesData from '@/data/sources.json';
 export const dynamic = 'force-dynamic';
 
 const SOURCE_HOSTS = new Set(
-  sourcesData.news.flatMap((source) => [source.url, source.rss])
+    (sourcesData as any).news.flatMap((source: any) => [source.url, source.rss])
     .filter((value): value is string => Boolean(value))
     .flatMap((value) => {
       try {
