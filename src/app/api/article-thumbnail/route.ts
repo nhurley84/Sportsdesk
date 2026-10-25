@@ -4,8 +4,8 @@ import sourcesData from '@/data/sources.json';
 export const dynamic = 'force-dynamic';
 
 const SOURCE_HOSTS = new Set(
-    (sourcesData as any).news.flatMap((source: any) => [source.url, source.rss])
-        .filter((value: any): value is string => Boolean(value))
+      sourcesData.news.flatMap((source) => [source.url, source.rss])
+            .filter((value): value is string => Boolean(value))
     .flatMap((value) => {
       try {
         return [new URL(value).hostname.replace(/^www\./, '').toLowerCase()];
