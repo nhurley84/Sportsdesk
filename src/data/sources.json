@@ -742,13 +742,6 @@
       "sport": "basketball"
     },
     {
-      "name": "The Lowe Post",
-      "hosts": "Zach Lowe",
-      "url": "https://feeds.megaphone.fm/ESP3625084333",
-      "rss": "https://feeds.megaphone.fm/ESP3625084333",
-      "sport": "basketball"
-    },
-    {
       "name": "The Bill Simmons Podcast",
       "hosts": "Bill Simmons",
       "url": "https://feeds.megaphone.fm/the-bill-simmons-podcast",
@@ -772,8 +765,8 @@
     {
       "name": "Aussie Hoopla",
       "hosts": "",
-      "url": "https://rss.libsyn.com/shows/70605/destinations/297503.xml",
-      "rss": "https://rss.libsyn.com/shows/70605/destinations/297503.xml",
+      "url": "https://aussiehoopla.libsyn.com/rss",
+      "rss": "https://aussiehoopla.libsyn.com/rss",
       "sport": "basketball"
     },
     {
