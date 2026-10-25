@@ -198,7 +198,7 @@ useEffect(() => {
   if (activeTab === 'video') {
     fetchVideosData(activeSport);
   }
-}, [activeTab]);
+}, [activeSport, activeTab]);
 
   // Reset pagination when switching tabs
   useEffect(() => {
@@ -768,14 +768,7 @@ useEffect(() => {
       <h2 className="sec-title">Video <span className="acc" style={{ color: activeColor }}>Highlights</span></h2>
       <span className="sec-count">{filteredVideos.length} VIDEOS</span>
     </div>
-
-    {filteredVideos.length === 0 && !loading.videos && (
-      <div style={{ textAlign: 'center', padding: '40px' }}>
-        <button className="btn-solid" onClick={() => fetchVideosData(activeSport)}>Load Videos</button>
-      </div>
-    )}
-
-    {loading.videos ? (
+  {loading.videos ? (
                   <div style={{ textAlign: 'center', padding: '40px', color: 'var(--muted)', fontFamily: 'var(--font-oswald)' }}>
                     ⚡ LOADING HIGHLIGHTS...
                   </div>
