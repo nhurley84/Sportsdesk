@@ -771,75 +771,111 @@
     },
     {
       "name": "The Pat McAfee Show",
-      "hosts": "Pat McAfee & team",
-      "url": "https://podcasts.apple.com/us/podcast/the-pat-mcafee-show/id1390721007",
+      "hosts": "Pat McAfee",
+      "url": "https://feeds.megaphone.fm/ESP7297553965",
+      "rss": "https://feeds.megaphone.fm/ESP7297553965",
       "sport": "nfl"
     },
     {
-      "name": "The Bill Simmons Podcast",
-      "hosts": "Bill Simmons & guests",
-      "url": "https://podcasts.apple.com/us/podcast/the-bill-simmons-podcast/id1043699131",
+      "name": "Mina Kimes Show",
+      "hosts": "Mina Kimes",
+      "url": "https://feeds.megaphone.fm/ESP8957020927",
+      "rss": "https://feeds.megaphone.fm/ESP8957020927",
       "sport": "nfl"
     },
     {
-      "name": "Around the NFL",
-      "hosts": "Dan Hanzus, Gregg Rosenthal, Marc Sessler",
-      "url": "https://podcasts.apple.com/us/podcast/around-the-nfl/id943299689",
+      "name": "NFL Daily",
+      "hosts": "",
+      "url": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/9ce11dad-e86a-444f-ba83-ae27003475be/deff018f-4b51-4501-937c-ae27003475d1/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/9ce11dad-e86a-444f-ba83-ae27003475be/deff018f-4b51-4501-937c-ae27003475d1/podcast.rss",
       "sport": "nfl"
     },
     {
       "name": "Move the Sticks",
-      "hosts": "Daniel Jeremiah, Bucky Brooks",
-      "url": "https://podcasts.apple.com/us/podcast/move-the-sticks-with-daniel-jeremiah-bucky-brooks/id943915633",
+      "hosts": "",
+      "url": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/0e61fe66-e985-446f-bc46-ae27003599da/c1b3eaa8-db6b-4865-ac29-ae27003599f6/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/0e61fe66-e985-446f-bc46-ae27003599da/c1b3eaa8-db6b-4865-ac29-ae27003599f6/podcast.rss",
       "sport": "nfl"
     },
     {
       "name": "The Ringer NFL Show",
-      "hosts": "Robert Mays, Derrik Klassen",
-      "url": "https://podcasts.apple.com/us/podcast/the-ringer-nfl-show/id1346254920",
+      "hosts": "",
+      "url": "https://feeds.megaphone.fm/the-ringer-nfl-show",
+      "rss": "https://feeds.megaphone.fm/the-ringer-nfl-show",
       "sport": "nfl"
     },
     {
       "name": "Pardon My Take",
-      "hosts": "Big Cat, PFT Commenter",
-      "url": "https://podcasts.apple.com/us/podcast/pardon-my-take/id1089979719",
+      "hosts": "",
+      "url": "https://mcsorleys.barstoolsports.com/feed/pardon-my-take",
+      "rss": "https://mcsorleys.barstoolsports.com/feed/pardon-my-take",
       "sport": "nfl"
     },
     {
-      "name": "F1 Beyond the Grid",
-      "hosts": "Tom Clarkson (Official F1 Podcast)",
-      "url": "https://podcasts.apple.com/us/podcast/f1-beyond-the-grid/id1405972616",
+      "name": "New Heights",
+      "hosts": "Jason & Travis Kelce",
+      "url": "https://rss.art19.com/new-heights",
+      "rss": "https://rss.art19.com/new-heights",
+      "sport": "nfl"
+    },
+    {
+      "name": "F1: Beyond the Grid",
+      "hosts": "",
+      "url": "https://audioboom.com/channels/4964339.rss",
+      "rss": "https://audioboom.com/channels/4964339.rss",
       "sport": "motorsport"
     },
     {
       "name": "F1 Nation",
-      "hosts": "Alex Jacques, Damon Hill, Natalie Pinkham, Tom Clarkson",
-      "url": "https://www.formula1.com/en/podcasts",
+      "hosts": "",
+      "url": "https://audioboom.com/channels/5024396.rss",
+      "rss": "https://audioboom.com/channels/5024396.rss",
       "sport": "motorsport"
     },
     {
       "name": "F1: Chequered Flag (BBC)",
-      "hosts": "BBC F1 team",
-      "url": "https://www.bbc.co.uk/programmes/p02xtb44",
+      "hosts": "BBC Sport",
+      "url": "https://podcasts.files.bbci.co.uk/p0npnl10.rss",
+      "rss": "https://podcasts.files.bbci.co.uk/p0npnl10.rss",
       "sport": "motorsport"
     },
     {
-      "name": "The Race F1 Podcast",
-      "hosts": "The Race team",
-      "url": "https://the-race.com/podcasts/",
+      "name": "Crash MotoGP Podcast",
+      "hosts": "",
+      "url": "https://feeds.acast.com/public/shows/60880ee0701a181d53b0da88",
+      "rss": "https://feeds.acast.com/public/shows/60880ee0701a181d53b0da88",
       "sport": "motorsport"
     },
     {
-      "name": "Shift+F1",
-      "hosts": "Independent F1 panel",
-      "url": "https://podcasts.apple.com/us/podcast/shift-f1-a-formula-1-podcast/id1488595371",
+      "name": "Supercars: Cool Down Lap",
+      "hosts": "",
+      "url": "https://rss.buzzsprout.com/1975790.rss",
+      "rss": "https://rss.buzzsprout.com/1975790.rss",
       "sport": "motorsport"
     },
     {
-      "name": "Beyond the Racing Line",
-      "hosts": "Independent F1 fan panel",
-      "url": "https://podcasts.apple.com/gb/podcast/beyond-the-racing-line/id1438445914",
+      "name": "Pit Talk",
+      "hosts": "",
+      "url": "https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/1928a334-85bc-4a2f-b9db-ac84006f3b9c/a1869946-e1d3-4b19-a313-ac84006f3ba5/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/1928a334-85bc-4a2f-b9db-ac84006f3b9c/a1869946-e1d3-4b19-a313-ac84006f3ba5/podcast.rss",
       "sport": "motorsport"
+    },
+    {
+      "name": "V8 Sleuth",
+      "hosts": "",
+      "url": "https://feeds.megaphone.fm/TWOAO3854423330",
+      "rss": "https://feeds.megaphone.fm/TWOAO3854423330",
+      "sport": "motorsport"
+    },
+    {
+      "name": "Rusty's Garage",
+      "hosts": "",
+      "url": "https://www.omnycontent.com/d/playlist/820f09cf-2ace-4180-a92d-aa4c0008f5fb/dd2804cb-1f45-4c79-83e9-aa4c003f9f4b/4dbd5294-795c-4844-a0b0-aa4c003f9f4b/podcast.rss",
+      "rss": "https://www.omnycontent.com/d/playlist/820f09cf-2ace-4180-a92d-aa4c0008f5fb/dd2804cb-1f45-4c79-83e9-aa4c003f9f4b/4dbd5294-795c-4844-a0b0-aa4c003f9f4b/podcast.rss",
+      "sport": "motorsport"
+    }
+  ]
+}
     }
   ],
   "videos": [
