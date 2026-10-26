@@ -277,21 +277,21 @@
       "sport": "football"
     },
     {
-      "name": "SMH Soccer",
-      "url": "https://www.smh.com.au/rss/sport.xml",
+      "name": "Sydney Morning Herald - Soccer",
+      "url": "https://www.smh.com.au/sport/soccer",
       "rss": "https://www.smh.com.au/rss/sport.xml",
       "sport": "football"
     },
     {
-      "name": "FIFA.com",
-      "url": "https://www.fifa.com/news",
-      "rss": null,
+      "name": "ABC Football",
+      "url": "https://www.abc.net.au/news/sport/football",
+      "rss": "https://www.abc.net.au/news/feed/7458444/rss.xml",
       "sport": "football"
     },
     {
-      "name": "A-League — Keep Up (Official)",
-      "url": "https://www.keepup.com.au",
-      "rss": null,
+      "name": "A-League — Mens (Official)",
+      "url": "https://aleagues.com.au/news/a-league-men/all-teams/",
+      "rss": "https://news.google.com/rss/search?q=a-league&hl=en-AU&gl=AU&ceid=AU:en",
       "sport": "football"
     },
     {
