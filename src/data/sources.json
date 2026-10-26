@@ -261,7 +261,7 @@
     {
       "name": "ESPN — Soccer",
       "url": "https://www.espn.com/soccer/",
-      "rss": null,
+      "rss": "https://www.espn.com/espn/rss/soccer/news",
       "sport": "football"
     },
     {
@@ -277,9 +277,9 @@
       "sport": "football"
     },
     {
-      "name": "UEFA.com — Champions League",
-      "url": "https://www.uefa.com/uefachampionsleague/news/",
-      "rss": null,
+      "name": "SMH Soccer",
+      "url": "https://www.smh.com.au/rss/sport.xml",
+      "rss": "https://www.smh.com.au/rss/sport.xml",
       "sport": "football"
     },
     {
