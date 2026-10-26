@@ -244,61 +244,61 @@
       "name": "BBC Sport — Football",
       "url": "https://www.bbc.com/sport/football",
       "rss": "https://feeds.bbci.co.uk/sport/football/rss.xml",
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "Sky Sports — Football",
       "url": "https://www.skysports.com/football",
       "rss": "https://www.skysports.com/rss/12040",
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "The Guardian — Football",
       "url": "https://www.theguardian.com/football",
       "rss": "https://www.theguardian.com/football/rss",
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "ESPN — Soccer",
       "url": "https://www.espn.com/soccer/",
       "rss": null,
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "Goal.com",
       "url": "https://www.goal.com",
       "rss": "https://news.google.com/rss/search?q=site:goal.com&hl=en-AU&gl=AU&ceid=AU:en",
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "Premier League (Official)",
       "url": "https://www.premierleague.com/news",
       "rss": "https://news.google.com/rss/search?q=site:premierleague.com&hl=en-AU&gl=AU&ceid=AU:en",
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "UEFA.com — Champions League",
       "url": "https://www.uefa.com/uefachampionsleague/news/",
       "rss": null,
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "FIFA.com",
       "url": "https://www.fifa.com/news",
       "rss": null,
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "A-League — Keep Up (Official)",
       "url": "https://www.keepup.com.au",
       "rss": null,
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "90min",
       "url": "https://www.90min.com",
       "rss": null,
-      "sport": "aleague"
+      "sport": "football"
     },
     {
       "name": "ESPN — NBA",
