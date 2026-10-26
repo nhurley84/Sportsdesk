@@ -654,7 +654,7 @@ const SPORT_RELEVANCE: Record<string, RegExp> = {
   nrl: /\b(nrl|rugby league|state of origin|super league|brisbane broncos|canberra raiders|canterbury bulldogs|cronulla|dolphins|gold coast titans|manly|melbourne storm|newcastle knights|new zealand warriors|north queensland|parramatta|penrith|south sydney|st george illawarra|sydney roosters|wests tigers)\b/i,
   cricket: /\b(cricket|cricketer|test match|ashes|ipl|big bash|bbl|wbbl|county championship|ranji trophy|sheffield shield|one[- ]day|t20|t-20|wicket|batting|bowling)\b/i,
   rugby: /\b(rugby union|wallabies|all blacks|springboks|six nations|super rugby|rugby championship|bkt united rugby|premiership rugby|waratahs|brumbies|queensland reds|western force|lions tour)\b/i,
-  aleague: /\b(soccer|football|a-league|premier league|champions league|europa league|world cup|fifa|uefa|serie a|la liga|bundesliga|socceroos|matildas|liverpool|arsenal|chelsea|manchester united|manchester city|real madrid|barcelona|bayern)\b/i,
+  football: /\b(soccer|football|a-league|premier league|champions league|europa league|world cup|fifa|uefa|serie a|la liga|bundesliga|socceroos|matildas|liverpool|arsenal|chelsea|manchester united|manchester city|real madrid|barcelona|bayern)\b/i,
   basketball: /\b(basketball|nba|wnba|nbl|euroleague|nba draft|playoffs|lakers|celtics|warriors|knicks|bucks|mavericks|thunder)\b/i,
   nfl: /\b(nfl|american football|super bowl|touchdown|quarterback|playoffs|chiefs|eagles|cowboys|packers|patriots|ravens|bills|49ers|seahawks)\b/i,
   motorsport: /\b(formula ?1|f1|motorsport|supercars|nascar|motogp|indycar|grand prix|grand prix|race[rs]?|racing|ferrari|mclaren|mercedes|red bull)\b/i,
@@ -669,7 +669,7 @@ function isSportRelevant(sport: string, item: FeedItem): boolean {
     .join(' ');
 
   if (sport === 'rugby' && /\b(nrl|rugby league)\b/i.test(text)) return false;
-  if (sport === 'aleague' && /\b(afl|nrl|american football|nfl)\b/i.test(text)) return false;
+  if (sport === 'football' && /\b(afl|nrl|american football|nfl)\b/i.test(text)) return false;
 
   return matcher.test(text);
 }
@@ -707,7 +707,7 @@ export async function fetchAllFeeds(sport = 'all'): Promise<Record<string, Artic
     nrl: [],
     cricket: [],
     rugby: [],
-    aleague: [],
+    football: [],
     basketball: [],
     nfl: [],
     motorsport: []
